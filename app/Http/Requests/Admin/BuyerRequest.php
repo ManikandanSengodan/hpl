@@ -25,26 +25,42 @@ class BuyerRequest extends FormRequest
     public function rules()
     {
         $validation = [
-            "full_name"                 => "required|min:4|max:50",
+            // "full_name"                 => "required|min:4|max:50",
             "email"                     => ["required","email",Rule::unique('customer_masters')->ignore($this->buyer)],
-            "mobile_number"             => ["nullable","min:10","numeric", Rule::unique('customer_masters')->ignore($this->buyer)],
-            "sales_rep"                 =>'nullable',
-            "bank_name"                 => 'nullable',
-            "account_no"                => ["nullable",Rule::unique('customer_masters')->ignore($this->buyer)],
-            "IFSCCode"                  => 'nullable',
-            "opening_balance"           => 'nullable',
-            "credit_period"             => 'nullable',
-            "grade"                     => 'nullable',
-            "company_name"              =>'required',
-            "company_phone"             => 'required|min:10|numeric',
-            "billing_address"           =>'required',
-            "shipping_address"          =>'required',
-            "GST"                       => ["nullable",Rule::unique('customer_masters')->ignore($this->buyer)],
-            "category"                  => "nullable",
-            "secondary_email"           => "nullable",
+            // "mobile_number"             => ["nullable","min:10","numeric", Rule::unique('customer_masters')->ignore($this->buyer)],
+            // "sales_rep"                 =>'nullable',
+            // "bank_name"                 => 'nullable',
+            // "account_no"                => ["nullable",Rule::unique('customer_masters')->ignore($this->buyer)],
+            // "IFSCCode"                  => 'nullable',
+            // "opening_balance"           => 'nullable',
+            // "credit_period"             => 'nullable',
+            // "grade"                     => 'nullable',
+            // "company_name"              =>'required',
+            // "company_phone"             => 'required|min:10|numeric',
+            // "billing_address"           =>'required',
+            // "shipping_address"          =>'required',
+            // "GST"                       => ["nullable",Rule::unique('customer_masters')->ignore($this->buyer)],
+            // "category"                  => "nullable",
+            // "secondary_email"           => "nullable",
             "status"                    => "nullable",
+            // "customer_code"             => "required",
+            "customer_name"             => "required",
+            "group_company"             => "required",
+            // "customer_code"             => "required",
+            "mobile_number"             => ["required","min:10","numeric", Rule::unique('customer_masters')->ignore($this->buyer)],
+            "pan"                       => "required",
+            "gst_no"                    => ["nullable",Rule::unique('customer_masters')->ignore($this->buyer)],
+            "customer_address"          => "required",
+            "customer_region"           => "required",
+            "customer_group"            => "required",
+            "sold_party"                => "required",
+            "ship_party"                => "required",
+            "bill_party"                => "required",
+            "sales_office"              => "required",
+            "payer"                     => "required",
+            "payer_name"                => "required",
+            "recon_account"             => "required",
 
-            
         ];
 
         if($this->isMethod("post"))
@@ -63,10 +79,10 @@ class BuyerRequest extends FormRequest
     public function messages()
     {
         return [
-            "email.unique"           => "This email already exists",
+            // "email.unique"           => "This email already exists",
             "mobile_number.unique"   => "This mobile number already exists",
-            "account_no.unique"      => "This account number already exists",
-            "GST.unique"             => "This GST number already exists",
+            // "account_no.unique"      => "This account number already exists",
+            "gst_no.unique"             => "This GST number already exists",
             "password.regex"         => "Password must be minimum 8 character and should contain atleast one number and a special character",
         ];
     }

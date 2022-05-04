@@ -17,7 +17,7 @@
                         <div class="card-header">
                             <h3 class="card-title">Customers</h3>
                             <div class="col-sm-6 float-right">
-                                <a href="{{ route('buyers.create') }}" class="btn bg-gradient-primary float-right">{{ __('Add Customer') }}</a>
+                                <a href="{{ route('customer.create') }}" class="btn bg-gradient-primary float-right">{{ __('Add Customer') }}</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
@@ -49,9 +49,9 @@
                                             <td>{{ $buyer->full_name }}</td>
                                             <td>{{ $buyer->mobile_number }}</td>
                                             <td>
-                                                <a href="{{ route('buyers.show',$buyer->id) }}" class="btn btn-sm btn-warning">View</a>
-                                                <a href="{{ route('buyers.edit',$buyer->id) }}" class="btn btn-sm btn-info">Edit</a>
-                                                <form method="POST" action="{{ route('buyers.destroy', $buyer->id) }}"
+                                                <a href="{{ route('customer.show',$buyer->id) }}" class="btn btn-sm btn-warning">View</a>
+                                                <a href="{{ route('customer.edit',$buyer->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                                <form method="POST" action="{{ route('customer.destroy', $buyer->id) }}"
                                                     accept-charset="UTF-8"
                                                     style="display: inline-block;"
                                                     onsubmit="return confirm('Are you sure do you want to delete?');">
