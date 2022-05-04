@@ -68,7 +68,15 @@ Route::middleware(['auth'])->group(function () {
     Route::get('designers/{designer}', [\App\Http\Controllers\Admin\DesignerController::class, 'show'])->name('designers.show');
     Route::delete('designers/{designer}', [\App\Http\Controllers\Admin\DesignerController::class, 'destroy'])->name('designers.destroy');
 
-    
+    //MOU
+    Route::get('mou', [\App\Http\Controllers\Admin\MouController::class, 'index'])->name('mou.index');
+    Route::get('mou/create', [\App\Http\Controllers\Admin\MouController::class, 'create'])->name('mou.create');
+    Route::post('mou', [\App\Http\Controllers\Admin\MouController::class, 'store'])->name('mou.store');
+    Route::get('mou/{designer}/edit', [\App\Http\Controllers\Admin\MouController::class, 'edit'])->name('mou.edit');
+    Route::put('mou/{designer}', [\App\Http\Controllers\Admin\MouController::class, 'update'])->name('mou.update');
+    Route::get('mou/{designer}', [\App\Http\Controllers\Admin\MouController::class, 'show'])->name('mou.show');
+    Route::delete('mou/{designer}', [\App\Http\Controllers\Admin\MouController::class, 'destroy'])->name('mou.destroy');
+
     //Sales Rep
 
 //    Route::get('salesreps', [\App\Http\Controllers\Admin\SalesRepController::class, 'index'])->name('salesreps.index');

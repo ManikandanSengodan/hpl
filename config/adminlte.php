@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'Card Designs',
+    'title' => 'HPL',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -45,12 +45,12 @@ return [
     |
     */
 
-    'logo' => '<b>Card</b>Designs',
+    'logo' => '<b>HPL</b>',
     'logo_icon' => 'images/plus.jpeg',
     'logo_icon_class' => 'brand-image icon-circle elevation-3',
     'logo_icon_xl' => null,
     'logo_icon_xl_class' => 'brand-image-xs',
-    'logo_icon_alt' => 'Card Designs',
+    'logo_icon_alt' => 'HPL',
 
     /*
     |--------------------------------------------------------------------------
@@ -247,211 +247,224 @@ return [
             'url'         => '',
             // 'icon'        => 'fas fa-fw fa-tachometer-alt',
             'icon'       => 'dashboard.png',
+            'can'         => 'AdminAccess',
         ],
         [
             'text'        => ['Admin'],
             'url'         => 'users',
             // 'icon'        => 'fas fa-fw fa-user-shield',
             'icon'       => 'admin.png',
+            'can'         => 'AdminAccess'
         ],
-        [
-            'text'        => ['Vendors'],
-            'url'         => 'sellers',
-            // 'icon'        => 'fas fa-fw fa-user',
-            'icon'       => 'vendor.png',
-        ],
+        // [
+        //     'text'        => ['Vendors'],
+        //     'url'         => 'sellers',
+        //     // 'icon'        => 'fas fa-fw fa-user',
+        //     'icon'       => 'vendor.png',
+        // ],
         [
             'text'        => ['Customers'],
             'url'         => 'buyers',
             // 'icon'        => 'fas fa-fw fa-user',
             'icon'       => 'people.png',
+            'can'         => 'AdminAccess'
+            
         ],
         [
-            'text'        => ['Staffs'],
-            // 'icon'        => 'fas fa-fw fa-user-tie',
-            'icon'       => 'employees.png',
-            'submenu' => [
-                [
-                    'text'        => ['Add Staff'],
-                    'url'         => 'staffs/create',
+            'text'        => ['MOUs'],
+            'url'         => 'mou',
+            // 'icon'        => 'fas fa-fw fa-user',
+            'icon'       => 'people.png',
+            'can'         => 'AdminAccess'
+            
+        ],
+        // [
+        //     'text'        => ['Staffs'],
+        //     // 'icon'        => 'fas fa-fw fa-user-tie',
+        //     'icon'       => 'employees.png',
+        //     'submenu' => [
+        //         [
+        //             'text'        => ['Add Staff'],
+        //             'url'         => 'staffs/create',
                     
-                ],
-                [
-                    'text'        => ['Designers'],
-                    'url'         => 'designers',
+        //         ],
+        //         [
+        //             'text'        => ['Designers'],
+        //             'url'         => 'designers',
                     
-                ],
-                [
-                    'text'        => ['Sales Rep'],
-                    'url'         => 'salesreps',
+        //         ],
+        //         [
+        //             'text'        => ['Sales Rep'],
+        //             'url'         => 'salesreps',
                    
-                ],
-                [
-                    'text'        => ['Printers'],
-                    'url'         => 'printers',
+        //         ],
+        //         [
+        //             'text'        => ['Printers'],
+        //             'url'         => 'printers',
                     
-                ],
-                [
-                    'text'        => ['Finishers'],
-                    'url'         => 'finishers',
+        //         ],
+        //         [
+        //             'text'        => ['Finishers'],
+        //             'url'         => 'finishers',
                     
-                ],
-                [
-                    // 'text'        => ['Loom Operators'],
-                    'text'        => ['Weaver'],
-                    'url'         => 'loomoperators',
+        //         ],
+        //         [
+        //             // 'text'        => ['Loom Operators'],
+        //             'text'        => ['Weaver'],
+        //             'url'         => 'loomoperators',
                     
-                ],
-                [
-                    // 'text'        => ['Finishing Operators'],
-                    'text'        => ['General Staff'],
-                    'url'         => 'finishingoperators',
+        //         ],
+        //         [
+        //             // 'text'        => ['Finishing Operators'],
+        //             'text'        => ['General Staff'],
+        //             'url'         => 'finishingoperators',
                    
-                ],
-                [
-                    'text'        => ['Quality Checkers'],
-                    'url'         => 'qualitycheckers',
+        //         ],
+        //         [
+        //             'text'        => ['Quality Checkers'],
+        //             'url'         => 'qualitycheckers',
                    
-                ],
+        //         ],
 
-            ],       
-        ],
-        [
-            'text'        => ['Woven Masters'],
-            // 'icon'        => 'fas fa-fw fa-dice-d6',
-            'icon'       => 'supplies.png',
-            'submenu' => [
-                [
-                    'text'        => ['Yarns'],
-                    'url'         => 'yarns',
+        //     ],       
+        // ],
+        // [
+        //     'text'        => ['Woven Masters'],
+        //     // 'icon'        => 'fas fa-fw fa-dice-d6',
+        //     'icon'       => 'supplies.png',
+        //     'submenu' => [
+        //         [
+        //             'text'        => ['Yarns'],
+        //             'url'         => 'yarns',
                     
-                ],
-                [
-                    'text'        => ['Warps'],
-                    'url'         => 'warps',
+        //         ],
+        //         [
+        //             'text'        => ['Warps'],
+        //             'url'         => 'warps',
                    
-                ],
-                [
-                    'text'        => ['Weaving Qualitys'],
-                    'url'         => 'wovenqualitys',
+        //         ],
+        //         [
+        //             'text'        => ['Weaving Qualitys'],
+        //             'url'         => 'wovenqualitys',
                    
-                ],
-                [
-                    'text'        => ['Looms'],
-                    'url'         => 'looms',
+        //         ],
+        //         [
+        //             'text'        => ['Looms'],
+        //             'url'         => 'looms',
                     
-                ],
-                [
-                    'text'        => ['FinishingMachines'],
-                    'url'         => 'finishingmachines',
+        //         ],
+        //         [
+        //             'text'        => ['FinishingMachines'],
+        //             'url'         => 'finishingmachines',
                     
-                ],
+        //         ],
                 
-                [
-                    'text'        => ['Folds'],
-                    'url'         => 'folds',
+        //         [
+        //             'text'        => ['Folds'],
+        //             'url'         => 'folds',
                     
-                ],
+        //         ],
 
-            ],
+        //     ],
 
 
-        ],
-        [
-            'text'        => ['Woven Design Cards'],
-            // 'icon'        => 'fas fa-fw fa-object-group',
-            'icon'       => 'web-design.png',
-            'url'         => 'woven-design-cards',
+        // ],
+        // [
+        //     'text'        => ['Woven Design Cards'],
+        //     // 'icon'        => 'fas fa-fw fa-object-group',
+        //     'icon'       => 'web-design.png',
+        //     'url'         => 'woven-design-cards',
 
-        ],
-        [
-            'text'        => ['Woven Purchase Order'],
-            // 'icon'        => 'fas fa-fw fa-object-group',
-            'icon'       => 'purchase.png',
-            'url'         => 'purchase-order',
+        // ],
+        // [
+        //     'text'        => ['Woven Purchase Order'],
+        //     // 'icon'        => 'fas fa-fw fa-object-group',
+        //     'icon'       => 'purchase.png',
+        //     'url'         => 'purchase-order',
 
-        ],
-        [
-            'text'        => ['Printed Masters'],
-            // 'icon'        => 'fas fa-fw fa-dice-d6',
-            'icon'       => '3d-printing.png',
-            'submenu' => [
-                [
-                    'text'        => ['Ink Master'],
-                    'url'         => 'ink',
+        // ],
+        // [
+        //     'text'        => ['Printed Masters'],
+        //     // 'icon'        => 'fas fa-fw fa-dice-d6',
+        //     'icon'       => '3d-printing.png',
+        //     'submenu' => [
+        //         [
+        //             'text'        => ['Ink Master'],
+        //             'url'         => 'ink',
                     
-                ],
-                [
-                    'text'        => ['Material  Master'],
-                    'url'         => 'material-master',
+        //         ],
+        //         [
+        //             'text'        => ['Material  Master'],
+        //             'url'         => 'material-master',
                    
-                ],
-                [
-                    'text'        => ['Size Master mm'],
-                    'url'         => 'size-master-mm',
+        //         ],
+        //         [
+        //             'text'        => ['Size Master mm'],
+        //             'url'         => 'size-master-mm',
                    
-                ],
+        //         ],
                 
-                [
-                    'text'        => ['Fold Master'],
-                    'url'         => 'printed-folds',
+        //         [
+        //             'text'        => ['Fold Master'],
+        //             'url'         => 'printed-folds',
                     
-                ],
-                 [
-                    'text'        => ['Machine master'],
-                    'url'         => 'machine-master',
+        //         ],
+        //          [
+        //             'text'        => ['Machine master'],
+        //             'url'         => 'machine-master',
                     
-                ],
-                 [
-                    'text'        => ['Cut fold  Machine master'],
-                    'url'         => 'cut-fold-machine',
+        //         ],
+        //          [
+        //             'text'        => ['Cut fold  Machine master'],
+        //             'url'         => 'cut-fold-machine',
                     
-                ],
+        //         ],
 
-            ],
+        //     ],
 
 
-        ],
-        [
-            'text'        => ['Printed Design Cards'],
-            // 'icon'        => 'fas fa-fw fa-object-group',
-            'icon'       => 'web-design.png',
-            'url'         => 'printed-design-cards',
+        // ],
+        // [
+        //     'text'        => ['Printed Design Cards'],
+        //     // 'icon'        => 'fas fa-fw fa-object-group',
+        //     'icon'       => 'web-design.png',
+        //     'url'         => 'printed-design-cards',
 
-        ],
-        [
-            'text'        => ['Printed Purchase Order'],
-            // 'icon'        => 'fas fa-fw fa-object-group',
-            'icon'       => 'purchase.png',
-            'url'         => 'printed-purchase-order',
+        // ],
+        // [
+        //     'text'        => ['Printed Purchase Order'],
+        //     // 'icon'        => 'fas fa-fw fa-object-group',
+        //     'icon'       => 'purchase.png',
+        //     'url'         => 'printed-purchase-order',
 
-        ],
+        // ],
         [
             'text'        => ['Roles'],
             // 'icon'        => 'far fa-id-badge',
             'icon'       => 'settings.png',
             'url'         => 'roles',
+            'can'         => 'AdminAccess'
 
         ],
-        [
-            'text'        => ['Category'],
-            // 'icon'        => 'fas fa-tags',
-            'icon'       => 'category.png',
-            'url'         => 'categories',
+        // [
+        //     'text'        => ['Category'],
+        //     // 'icon'        => 'fas fa-tags',
+        //     'icon'       => 'category.png',
+        //     'url'         => 'categories',
 
-        ],
-        [
-            'text'        => ['Invoice'],
-            // 'icon'        => 'fas fa-tags',
-            'icon'       => 'invoice.png',
-            'url'         => 'invoice',
-        ],
-        [
-            'text'        => ['Company Profile'],
-            // 'icon'        => 'fas fa-tags',
-            'icon'       => 'profile.png',
-            'url'         => 'company-profile',
-        ],
+        // ],
+        // [
+        //     'text'        => ['Invoice'],
+        //     // 'icon'        => 'fas fa-tags',
+        //     'icon'       => 'invoice.png',
+        //     'url'         => 'invoice',
+        // ],
+        // [
+        //     'text'        => ['Company Profile'],
+        //     // 'icon'        => 'fas fa-tags',
+        //     'icon'       => 'profile.png',
+        //     'url'         => 'company-profile',
+        // ],
         
         ['header' => 'account_settings'],
         [
