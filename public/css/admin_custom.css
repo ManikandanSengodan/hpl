@@ -1,0 +1,180 @@
+aside.main-sidebar.sidebar-dark-primary.elevation-4 {}
+
+.sidebar-dark-primary .nav-sidebar>.nav-item>.nav-link.active, .sidebar-light-primary .nav-sidebar>.nav-item>.nav-link.active, a.nav-link.active {
+    background:#353190 !imortant;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 3px solid #fff;
+}
+
+
+[class*=sidebar-dark-] .nav-sidebar>.nav-item.menu-open>.nav-link, [class*=sidebar-dark-] .nav-sidebar>.nav-item:hover>.nav-link, [class*=sidebar-dark-] .nav-sidebar>.nav-item>.nav-link:focus{
+   background:#353190;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 3px solid #fff;
+}
+
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:hover{
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 3px solid #fff;
+}
+
+.sidebar {
+  box-shadow: 0px 0px 5px 5px;
+    padding: 0px 0px 0px 16px;
+}
+
+aside.main-sidebar.sidebar-dark-primary.elevation-4 {
+  box-shadow: 0px 0px 5px 5px!important;
+}
+
+.navbar-white {
+    background-color: #f3f6f9;
+    color: #1f2d3d;
+}
+.main-header {
+    border-bottom: 1px solid #f3f6f9;
+    z-index: 1034;
+}
+.card-primary:not(.card-outline)>.card-header {
+    background-color: #353190;
+}
+[class*=sidebar-dark-] {
+    background-color: #15213a;
+}
+
+h3.card-title {
+    line-height: 30px;
+}
+
+aside.main-sidebar.sidebar-dark-primary.elevation-4 {}
+
+a.nav-link.active {
+    background:#353190 !imortant;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 3px solid #fff;
+}
+
+
+[class*=sidebar-dark-] .nav-sidebar>.nav-item.menu-open>.nav-link, [class*=sidebar-dark-] .nav-sidebar>.nav-item:hover>.nav-link, [class*=sidebar-dark-] .nav-sidebar>.nav-item>.nav-link:focus{
+   background:#353190;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 3px solid #fff;
+}
+
+[class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:focus, [class*=sidebar-dark-] .nav-treeview>.nav-item>.nav-link:hover{
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 3px solid #fff;
+}
+
+.sidebar {
+  box-shadow: 0px 0px 5px 5px;
+}
+
+aside.main-sidebar.sidebar-dark-primary.elevation-4 {
+  box-shadow: 0px 0px 5px 5px!important;
+}
+
+.navbar-white {
+    background-color: #f3f6f9;
+    color: #1f2d3d;
+}
+.main-header {
+    border-bottom: 1px solid #f3f6f9;
+    z-index: 1034;
+}
+.card-primary:not(.card-outline)>.card-header {
+    background-color: #353190;
+}
+[class*=sidebar-dark-] {
+    background-color: #15213a;
+}
+
+h3.card-title {
+    line-height: 25px;
+}
+
+.content-header h1 {
+    display:none;
+}
+.btn {
+   padding: 2px 20px;
+    border-radius: 5px;
+}
+input.form-control {
+    height: calc(2.35rem + 2px) !important;
+}
+[class*=sidebar-dark-] .sidebar a > img {
+     height: 20px;
+    width:20px;
+    padding: 2px;
+}
+.card-body {
+    overflow-x: scroll;
+}
+
+
+
+ladle{
+   color:#959595;
+}
+
+.form-control{
+    border:1px solid #35318f;
+}
+.small-box>.small-box-footer {
+    display: none;
+}
+
+
+
+
+.bg-gradient-info {
+    border-radius: 10px;
+    background: #eabe15 !important;
+}
+.bg-gradient-green {
+    border-radius: 10px;
+    background: #cf395f !important;
+}
+.content-wrapper>.content {
+    margin: 40px 0px 0px 12px;
+}
+
+
+
+.table-bordered th, .table-bordered td,.table-bordered thead td, .table-bordered thead th,.table-bordered{
+     border:none;
+}
+ tr:hover{
+     background-color:#ececee
+}
+table.table.table-bordered.action-hide th:last-child ,table.table.table-bordered.action-hide td:last-child{
+    display:none;
+}
+.bg-gradient-success.btn.active, .bg-gradient-success.btn:active, .bg-gradient-success.btn:not(:disabled):not(.disabled).active, .bg-gradient-success.btn:not(:disabled):not(.disabled):active {
+    background: #343190 !important;
+}
+
+a.btn.bg-gradient-success.btn-md.mr-2 {
+   background: #343190 !important;
+}
+
+.search-form button{
+  padding: 3px 12px;
+  margin-right: 10px;
+  background-color: #eabe13!important;
+}
+.search-form i {
+
+    margin-right: 10px;
+}
+.search-form span
+{
+    line-height: 15px;
+}

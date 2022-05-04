@@ -1,0 +1,214 @@
+body{
+  background-color: #ecedee;
+}
+
+/* Sidebar */
+#sidebar-wrapper{
+  z-index:1;
+  position: fixed;
+  width: 80px;
+  height:100%;
+  
+  background: #15213a;
+  opacity:0.9;
+	transition:all .5s;
+	/* display:flex; */
+	align-items:center;
+}
+#sidebar-wrapper  span {
+  display: none;
+}
+
+/* Main Content */
+#page-content-wrapper{
+  width: 100%;	
+  position: absolute;
+ 
+	transition:all .5s;
+  padding-left: 80px;
+  background-color: #ecedee;
+  
+}
+
+#menu-toggle{
+	transition:all .3s;
+  border: none;
+}
+.sidebar-nav li img{
+  width: 26px;
+  height: 30px;
+}
+/* Change the width of the sidebar to display it*/
+#wrapper.menuDisplayed #sidebar-wrapper{
+  width:230px;
+  box-shadow: 0px 0px 5px 5px;
+}
+#wrapper.menuDisplayed #sidebar-wrapper  span {
+  display: block;
+  padding-left: 15px;
+}
+
+
+#wrapper.menuDisplayed #page-content-wrapper{
+  padding-left:240px;
+  /* width: calc(100% - 310px); */
+}
+
+/* Sidebar styling */
+.sidebar-nav{
+  padding:0;
+  list-style:none; 
+	transition:all .0s;
+	width:100%;
+	/* text-align:center; */
+  margin-left: 20px;
+  padding-top: 22px;
+  height: 100vh;
+  overflow: auto;
+}
+
+.sidebar-nav li{
+	width:100%;
+	transition:all .3s;
+	padding:10px;
+  display: flex;
+}
+
+.sidebar-nav li a {
+  display:block;
+  text-decoration:none;
+  color:#ddd;
+  font-size: 17px;
+  padding-left: 10px;
+}
+.acount{
+  font-size: 20px;
+  color: #fff;
+}
+.sidebar-nav li:hover{
+  background:#353190;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 5px solid #fff;
+}
+.active {
+  background:#353190;
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+  border-right: 5px solid #fff;
+}
+/* my css */
+.dashboard{
+  margin-left: 20px;
+  margin-top: 20px;
+}
+.dashboard h5{
+  font-size: 20px;
+
+}
+.cardone{
+  width: 350px;
+  height: 190px;
+  background-color: #eabe15;
+  border-radius: 10px;
+  box-shadow: 0px 4px 5px 0px;
+  margin-right: 15px;
+  align-items: inherit;
+}
+.cardtwo{
+  width: 350px;
+  height: 190px;
+  background-color: #cf395f;
+  border-radius: 10px;
+  box-shadow: 0px 4px 5px 0px;
+}
+.cardnumber{
+  font-size: 28px;
+  color: #fff;
+  justify-content: baseline;
+}
+.cardname{
+  font-size: 19px;
+  color: #fff;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 40px;
+}
+/* add admin */
+.addadmin{
+  width: 140px;
+  height: 50px;
+  align-self: center;
+  padding-top: 12px;
+  /* font-size: 21px;
+  background-color: #35318f; */
+  border-radius: 10px;
+  
+}
+.headernav{
+  background-color: #35318f;
+  border-radius: 10px;
+}
+.form-inline input{
+    height: 35px;
+    width: 230px !important;
+    border-radius: 10px;
+    text-align: right;
+}
+.form-inline button{
+  background-color: #e9bd15;
+    width: 80px;
+    height: 35px;
+    border: none;
+    color: #fff;
+    border-radius: 10px;
+}
+.form-inline button img{
+  width: 18px;
+}
+.navhead{
+  margin: inherit;
+    color: #ffff;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 0px;
+}
+.pagination>li{
+  font-size: 13px;
+}
+
+.table{
+  font-size: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: white;
+
+}
+.addadminhead{
+  margin-bottom: 10px;
+  border-radius: 10px;
+  
+}
+.p-3{
+
+}
+/* .dashboard */
+.form-group{
+  margin-top: 10px;
+}
+.form-group input{
+  border-radius: 10px;
+}
+.tablesection{
+  overflow-x: auto;
+}
+.form-control{
+  border-radius: 10px;
+}
+.table th ,td{
+  white-space: nowrap;
+}
+.add{
+  background-color: white;
+  margin: 0px;
+}

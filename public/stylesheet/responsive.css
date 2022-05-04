@@ -1,0 +1,21 @@
+@media screen and (max-width:430px) and (min-width:320px) {
+    .form-inline{
+        width: 100%;
+    }
+    .form-inline input{
+        width: 100% !important;
+        margin-bottom: 5PX;
+    } 
+    .btn:not(:disabled):not(.disabled){
+        width: 100%;
+        margin: 5px;
+    }
+    #wrapper.menuDisplayed #sidebar-wrapper{
+        width: 230px;
+    }
+    #wrapper.menuDisplayed #page-content-wrapper{
+        padding-left: 240px;
+    }
+   
+
+}

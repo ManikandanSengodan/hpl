@@ -1,0 +1,1228 @@
+<style type="text/css">
+    .face{
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        background-color: transparent;;
+        border: 4px solid rgba(10,10,10,0.5);
+    }
+    .object-fit-container {
+        border: 2px solid;
+        padding: 10px;
+    
+    height: 230px; /*any size*/
+    }
+
+    .object-fit-cover {
+    width: auto;
+    height: 100%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    object-fit: cover; /*magic*/
+    }
+    tr input {
+
+        width:70px
+    }
+    /* .label_names
+    {
+        border:none !important;
+        color:#000;
+        font-weight:bold;
+    } */
+</style>
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="kOzYg6wN2PUGI5zrrSQKREJYdF9dgZtyzGemmnAc">
+
+    
+    
+    
+    <title>
+                Edit Woven            </title>
+
+    
+    
+    
+            <link rel="stylesheet" href="http://127.0.0.1:8000/vendor/fontawesome-free/css/all.min.css">
+        <link rel="stylesheet" href="http://127.0.0.1:8000/vendor/overlayScrollbars/css/OverlayScrollbars.min.css">
+
+        
+        
+        <link rel="stylesheet" href="http://127.0.0.1:8000/vendor/adminlte/dist/css/adminlte.min.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+          <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/css/pixelarity.css">
+    
+    
+    
+    
+            
+    
+    
+</head>
+
+<body class="sidebar-mini" >
+
+    
+        <div class="wrapper">
+
+        
+                    <nav class="main-header navbar
+    navbar-expand
+    navbar-white navbar-light">
+
+    
+    <ul class="navbar-nav">
+        
+        <li class="nav-item">
+    <a class="nav-link" data-widget="pushmenu" href="#"
+                        >
+        <i class="fas fa-bars"></i>
+        <span class="sr-only">Toggle navigation</span>
+    </a>
+</li>
+        
+        
+        
+            </ul>
+
+    
+    <ul class="navbar-nav ml-auto">
+        
+        
+        
+        <li class="nav-item">
+    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+        <i class="fas fa-expand-arrows-alt"></i>
+    </a>
+</li>
+
+
+        
+                                    <li class="nav-item dropdown user-menu">
+
+    
+    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">
+                <span >
+            Guna
+        </span>
+    </a>
+
+    
+    <ul class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+
+        
+                            
+        
+        
+        
+        
+        
+        <li class="user-footer">
+                        <a class="btn btn-default btn-flat float-right  btn-block "
+               href="#" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+                <i class="fa fa-fw fa-power-off"></i>
+                Log Out
+            </a>
+            <form id="logout-form" action="http://127.0.0.1:8000/logout" method="POST" style="display: none;">
+                                <input type="hidden" name="_token" value="kOzYg6wN2PUGI5zrrSQKREJYdF9dgZtyzGemmnAc">
+            </form>
+        </li>
+
+    </ul>
+
+</li>
+                    
+        
+            </ul>
+
+</nav>
+        
+        
+                    <aside class="main-sidebar sidebar-dark-primary elevation-4">
+
+    
+            <a href="http://127.0.0.1:8000"
+            class="brand-link "
+    >
+
+    
+    <img src="http://127.0.0.1:8000/images/plus.jpeg"
+         alt="Card Designs"
+         class="brand-image img-circle elevation-3"
+         style="opacity:.8">
+
+    
+    <span class="brand-text font-weight-light ">
+        <b>Card</b>Designs
+    </span>
+
+</a>
+    
+    
+    <div class="sidebar">
+        <nav class="pt-2">
+            <ul class="nav nav-pills nav-sidebar flex-column "
+                data-widget="treeview" role="menu"
+                                >
+                
+                <li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000"        >
+
+        <i class="fas fa-fw fa-tachometer-alt "></i>
+
+        <p>
+            Dashboard
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/users"        >
+
+        <i class="fas fa-fw fa-user-shield "></i>
+
+        <p>
+            Admin
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/sellers"        >
+
+        <i class="fas fa-fw fa-user "></i>
+
+        <p>
+            Vendors
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/buyers"        >
+
+        <i class="fas fa-fw fa-user "></i>
+
+        <p>
+            Customers
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item has-treeview ">
+
+    
+    <a class="nav-link  "
+       href="" >
+
+        <i class="fas fa-fw fa-user-tie "></i>
+
+        <p>
+            Staffs
+            <i class="fas fa-angle-left right"></i>
+
+                    </p>
+
+    </a>
+
+    
+    <ul class="nav nav-treeview">
+        <li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/staffs/create"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Add Staff
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/designers"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Designers
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/salesreps"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Sales Rep
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/printers"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Printers
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/finishers"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Finishers
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/loomoperators"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Loom Operators
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/finishingoperators"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Finishing Operators
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/qualitycheckers"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Quality Checkers
+
+                    </p>
+
+    </a>
+
+</li>
+
+    </ul>
+
+</li>
+
+<li  class="nav-item has-treeview ">
+
+    
+    <a class="nav-link  "
+       href="" >
+
+        <i class="fas fa-fw fa-dice-d6 "></i>
+
+        <p>
+            Masters
+            <i class="fas fa-angle-left right"></i>
+
+                    </p>
+
+    </a>
+
+    
+    <ul class="nav nav-treeview">
+        <li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/yarns"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Raw Materials
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/warps"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Warps
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/wovenqualitys"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            WovenQualitys
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/looms"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Looms
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/finishingmachines"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            FinishingMachines
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/folds"        >
+
+        <i class="far fa-fw fa-circle "></i>
+
+        <p>
+            Folds
+
+                    </p>
+
+    </a>
+
+</li>
+
+    </ul>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/woven-design-cards"        >
+
+        <i class="fas fa-fw fa-object-group "></i>
+
+        <p>
+            Design Cards
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/roles"        >
+
+        <i class="far fa-id-badge "></i>
+
+        <p>
+            Roles
+
+                    </p>
+
+    </a>
+
+</li>
+
+<li  class="nav-header ">
+
+    ACCOUNT SETTINGS
+
+</li>
+
+<li  class="nav-item">
+
+    <a class="nav-link  "
+       href="http://127.0.0.1:8000/users/change-password"        >
+
+        <i class="fas fa-fw fa-lock "></i>
+
+        <p>
+            Change Password
+
+                    </p>
+
+    </a>
+
+</li>
+
+            </ul>
+        </nav>
+    </div>
+
+</aside>
+        
+        
+        <div class="content-wrapper ">
+
+            
+                            <div class="content-header">
+                    <div class="container-fluid">
+                            <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1 class="pl-2">Edit Woven - jkwher</h1>
+        </div>
+
+        <div class="col-sm-6 pr-4 d-flex justify-content-end">
+                            <a href="http://127.0.0.1:8000/woven-design-card/1" class="btn col-2 bg-gradient-primary mr-3">View</a>
+                        <a href="http://127.0.0.1:8000/woven-design-cards" class="btn col-2 bg-gradient-danger">Back</a>
+        </div>
+    </div>
+                    </div>
+                </div>
+            
+            
+            <div class="content">
+                <div class="container-fluid">
+                        <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                                                                                                                                                                                                    
+                    <!-- /.card -->
+                    <div class="card card-primary" >
+                        <!-- card-header -->
+                        <div class="card-header">
+                            <h3 class="card-title">Edit Design Card</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <!-- form start -->
+                        <form method="POST" action="http://127.0.0.1:8000/woven-design-card/1" enctype="multipart/form-data" novalidate>
+                            <input type="hidden" name="_token" value="kOzYg6wN2PUGI5zrrSQKREJYdF9dgZtyzGemmnAc">                             <input type="hidden" name="_method" value="PUT">                             <div class="card-body">
+                                <div class="row">
+                                    <div class="col-9">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered text-nowrap">
+                                                <tr>
+                                                    <th>Customer</th>
+                                                    <td>
+                                                        <select class="form-control " name="customer_id">
+                                                            <option value="">Select Customer</option>
+                                                             
+                                                                                                                                    <option value="2" selected>Jithender </option>
+                                                                                                                             
+                                                                                                                                    <option value="1" >Gddfgd </option>
+                                                                                                                             
+                                                                                                                                    <option value="3" >Fsdfsdf </option>
+                                                                                                                             
+                                                                                                                                    <option value="4" >Vdfdf </option>
+                                                                                                                                                                                    </select>
+                                                                                                            </td>
+                                                    <th>Label</th>
+                                                    <td><input type="text" name="label" value="jkwher" class="form-control"></td>
+                                                    <th>Date</th>
+                                                    <td><input type="date" name="date" value="2021-08-21" class="form-control"></td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>Designer</th>
+                                                    <td>
+                                                        <select class="form-control" name="designer_id">
+                                                            <option value="">Select Designer</option>
+                                                             
+                                                                                                                                    <option value="2" selected>Fsdfsdf </option>
+                                                                                                                             
+                                                                                                                                    <option value="1" >Xvxcv </option>
+                                                                                                                                                                                    </select>
+                                                    </td>
+                                                    <th>Sales Rep</th>
+                                                    <td>
+                                                        <select class="form-control" name="salesrep_id">
+                                                            <option value="">Select Sales Rep</option>
+                                                             
+                                                                                                                                    <option value="4" selected>Bcbcvb </option>
+                                                                                                                                                                                        </select>
+                                                    </td>
+                                                    <th>Weaver</th>
+                                                    <td width="150px">
+                                                        <div class="form-group row mx-2">
+                                                            <select style="width: 50%;"  class="form-control" name="weaver[]">
+                                                                <option value="">Select</option>
+                                                                 
+                                                                                                                                            <option value="3" selected>Muller </option>
+                                                                                                                                         
+                                                                                                                                            <option value="2" >Airjet 1.2 Mt </option>
+                                                                                                                                         
+                                                                                                                                            <option value="1" >Airjet 1.6 mt </option>
+                                                                                                                                                                                                    </select>
+                                                            <select style="width: 50%;" class="form-control" name="weaver[]">
+                                                                <option value="">Select</option>
+                                                                 
+                                                                                                                                            <option value="3" >Muller </option>
+                                                                                                                                         
+                                                                                                                                            <option value="2" selected>Airjet 1.2 Mt </option>
+                                                                                                                                         
+                                                                                                                                            <option value="1" >Airjet 1.6 mt </option>
+                                                                                                                                                                                                    </select>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <th>Warp</th>
+                                                    <td>
+                                                        <select name="warps_id" class="form-control">
+                                                            <option value="">Select Warp</option>
+                                                             
+                                                                                                                                    <option value="1" selected>Sdfsdf </option>
+                                                                                                                                                                                    </select>
+                                                    </td>
+                                                    <th>Finishing</th>
+                                                    <td>
+                                                         <select name="finishing" class="form-control">
+                                                            <option value="">Select finishing</option>
+                                                             
+                                                                                                                                    <option value="1" selected>Ascas </option>
+                                                                                                                                                                                    </select>
+                                                    </td>
+                                                    <th>Notes</th>
+                                                    <td>
+                                                       <textarea name="description" cols="30" rows="3" class="form-control">
+                                                           1
+                                                       </textarea>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                                 
+                                            <div class="row">
+                                                <div class="col">
+                                                    <table class="table table-bordered text-nowrap">
+                                                        <tr>
+                                                            <th></th>
+                                                            <th>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" class="custom-control-input" id="main_label" checked disabled>
+                                                                    <label class="custom-control-label" for="main_label">Main Label</label>
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th width="200px">Design No</th>
+                                                            <td width="200px"><input type="text" name="main_label[design_no]" value="5454" class="form-control"></td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <th width="200px">Quality</th>
+                                                            <td width="200px">
+                                                         <select name="main_label[quality]" class="form-control">
+                                                            <option value="">Select Quality</option>
+                                                             
+                                                                                                                                    <option value="1" selected>Super </option>
+                                                                                                                                                                                    </select>
+                                                                </td>
+                                                        </tr>
+                                                        
+                                                        <tr>
+                                                            <th width="200px">Picks/Cm</th>
+                                                            <td width="200px"><input type="text" name="main_label[picks]" value="70" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th width="200px">Total Picks</th>
+                                                            <td width="200px"><input type="text" name="main_label[total_picks]" value="666" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th width="200px">Total Repeat</th>
+                                                            <td width="200px">
+                                                                <div class="form-group row">
+                                                                                                                                            <input type="text" name="main_label[total_repeat][]" value="555" class="form-control col">
+                                                                        <input type="text" name="main_label[total_repeat][]" value="66" class="form-control col">
+                                                                        <input type="text" name="main_label[total_repeat][]" value="66" class="form-control col">
+                                                                                                                                    </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th width="200px">Wastage</th>
+                                                            <td width="200px">
+                                                                <div class="form-group d-flex">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" value="yes" name="main_label[wastage]" >
+                                                                        <label class="form-check-label ml-4">Yes</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" value="no" name="main_label[wastage]" checked>
+                                                                        <label class="form-check-label ml-4">No</label>
+                                                                    </div>
+                                                                </div>                                                                
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th width="200px">Width</th>
+                                                            <td width="200px"><input type="text" name="main_label[width]" value="120" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th width="200px">Length</th>
+                                                            <td width="200px"><input type="text" name="main_label[length]" value="90" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th width="200px">Sq mm</th>
+                                                            <td width="200px"><input type="text" name="main_label[sq_mm]" value="100" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <th width="200px">Sq inch</th>
+                                                            <td width="200px"><input type="text" name="main_label[sq_inch]" value="150" class="form-control"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+
+                                                <div class="col">
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" name="tab_labels"  value="on"  class="custom-control-input" id="tab_label">
+                                                                    <label class="custom-control-label" for="tab_label">Tab Label</label>
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+
+                                                        <tr class="tab_label_input d-none">
+                                                            <td width="200px"><input type="text" name="tab_label[design_no]" value="df" class="form-control"></td>
+                                                        </tr>
+                                                        
+                                                        <tr class="tab_label_input d-none">
+                                                            <td width="200px">
+                                                                <select name="tab_label[quality]" class="form-control">
+                                                                    <option value="">Select Quality</option>
+                                                                     
+                                                                                                                                                    <option value="1" >Super </option>
+                                                                                                                                                                                                            </select>
+                                                            </td>
+                                                        </tr>
+                                                        
+                                                        <tr class="tab_label_input d-none">
+                                                            <td width="200px"><input type="text" name="tab_label[picks]" value="" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr class="tab_label_input d-none">
+                                                            <td width="200px"><input type="text" name="tab_label[total_picks]" value="" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr class="tab_label_input d-none">
+                                                            <td width="200px">
+                                                                <div class="form-group row">
+                                                                                                                                            <input type="text" name="tab_label[total_repeat][]" value="" class="form-control col">
+                                                                        <input type="text" name="tab_label[total_repeat][]" value="" class="form-control col">
+                                                                        <input type="text" name="tab_label[total_repeat][]" value="" class="form-control col">
+                                                                                                                                    </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr class="tab_label_input d-none">
+                                                            <td width="200px">
+                                                                <div class="form-group d-flex">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" value="yes" name="tab_label[wastage]" >
+                                                                        <label class="form-check-label ml-4">Yes</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" value="no" name="tab_label[wastage]" checked>
+                                                                        <label class="form-check-label ml-4">No</label>
+                                                                    </div>
+                                                                </div>  
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr class="tab_label_input d-none">
+                                                            <td width="200px">
+                                                                <input type="text" name="tab_label[width]" value="" class="form-control">
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr class="tab_label_input d-none">
+                                                            <td width="200px"><input type="text" name="tab_label[length]" value="" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr class="tab_label_input d-none">
+                                                            <td width="200px"><input type="text" name="tab_label[sq_mm]" value="" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr class="tab_label_input d-none">
+                                                            <td width="200px"><input type="text" name="tab_label[sq_inch]" value="" class="form-control"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                                <div class="col">
+                                                    <table class="table table-bordered">
+                                                        <tr>
+                                                            <th>
+                                                                <div class="custom-control custom-checkbox">
+                                                                    <input type="checkbox" name="size_labels"  class="custom-control-input" id="size_label">
+                                                                    <label class="custom-control-label" for="size_label">Size Label</label>
+                                                                </div>
+                                                            </th>
+                                                        </tr>
+
+                                                        <tr class="size_label_input d-none">
+                                                            <td width="200px"><input type="text" name="size_label[design_no]" value="4" class="form-control"></td>
+                                                        </tr>
+                                                        
+                                                        <tr class="size_label_input d-none">
+                                                            <td width="200px">
+                                                                <select name="size_label[quality]" class="form-control">
+                                                                    <option value="">Select Quality</option>
+                                                                     
+                                                                                                                                                    <option value="1" selected>Super </option>
+                                                                                                                                                                                                            </select>
+                                                            </td>
+                                                        </tr>
+                                                        
+                                                        <tr class="size_label_input d-none">
+                                                            <td width="200px"><input type="text" name="size_label[picks]" value="250" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr class="size_label_input d-none">
+                                                            <td width="200px"><input type="text" name="size_label[total_picks]" value="260" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr class="size_label_input d-none">
+                                                            <td width="200px">
+                                                                <div class="form-group row">
+                                                                                                                                            <input type="text" name="size_label[total_repeat][]" value="1" class="form-control col">
+                                                                        <input type="text" name="size_label[total_repeat][]" value="2" class="form-control col">
+                                                                        <input type="text" name="size_label[total_repeat][]" value="15" class="form-control col">
+                                                                                                                                    </div>
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr class="size_label_input d-none">
+                                                            <td width="200px">
+                                                                <div class="form-group d-flex">
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" value="yes" name="size_label[wastage]" >
+                                                                        <label class="form-check-label ml-4">Yes</label>
+                                                                    </div>
+                                                                    <div class="form-check">
+                                                                        <input class="form-check-input" type="radio" value="no" name="size_label[wastage]" checked>
+                                                                        <label class="form-check-label ml-4">No</label>
+                                                                    </div>
+                                                                </div>                                                                
+                                                            </td>
+                                                        </tr>
+
+                                                        <tr class="size_label_input d-none">
+                                                            <td width="200px"><input type="text" name="size_label[width]" value="300" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr class="size_label_input d-none">
+                                                            <td width="200px"><input type="text" name="size_label[length]" value="78" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr class="size_label_input d-none">
+                                                            <td width="200px"><input type="text" name="size_label[sq_mm]" value="78" class="form-control"></td>
+                                                        </tr>
+
+                                                        <tr class="size_label_input d-none">
+                                                            <td width="200px"><input type="text" name="size_label[sq_inch]" value="330" class="form-control"></td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        
+                                            <table class="table table-bordered text-nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Add on</th>
+                                                        <th>Basic</th>
+                                                        <th>Cut fold</th>	
+                                                        <th>Diecut</th>	
+                                                        <th>Nonwoven</th>		
+                                                        <th>Iron on back</th>
+                                                        <th>Extras</th>
+                                                        <th>Total</th>
+                                                        <th>Offered</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr id="main_table_row">
+                                                        <th>Main</th>
+                                                        <td><input type="text" name="main_cost[basic]" value="" class="form-controls main_txt_cal"></td>
+                                                        <td><input type="text" name="main_cost[cut_fold]" value="20" class="form-controls main_txt_cal"></td>
+                                                        <td><input type="text" name="main_cost[diecut]" value="30" class="form-controls main_txt_cal"></td>
+                                                        <td><input type="text" name="main_cost[nonwoven]" value="40" class="form-controls main_txt_cal"></td>
+                                                        <td><input type="text" name="main_cost[iron_on_back]" value="50" class="form-controls main_txt_cal"></td>
+                                                        <td><input type="text" name="main_cost[extra]" value="60" class="form-controls main_txt_cal"></td>
+                                                        <td><input type="text" name="main_cost[total]" value="200" class="form-controls" readonly id="main_total_value"></td>
+                                                        <td><input type="text" name="main_cost[offered]" value="100" class="form-controls"></td>
+                                                    </tr>
+
+                                                    <tr id="tab_table_row">
+                                                        <th>Tab</th>
+                                                        <td><input type="text" name="tab_cost[basic]" value="15" class="form-controls tab_txt_cal"></td>
+                                                        <td><input type="text" name="tab_cost[cut_fold]" value="15" class="form-controls tab_txt_cal"></td>
+                                                        <td><input type="text" name="tab_cost[diecut]" value="66" class="form-controls tab_txt_cal"></td>
+                                                        <td><input type="text" name="tab_cost[nonwoven]" value="648" class="form-controls tab_txt_cal"></td>
+                                                        <td><input type="text" name="tab_cost[iron_on_back]" value="889" class="form-controls tab_txt_cal"></td>
+                                                        <td><input type="text" name="tab_cost[extra]" value="99" class="form-controls tab_txt_cal"></td>
+                                                        <td><input type="text" name="tab_cost[total]" value="1732" class="form-controls" readonly id="tab_total_value"></td>
+                                                        <td><input type="text" name="tab_cost[offered]" value="999" class="form-controls"></td>
+                                                    </tr>
+
+                                                    <tr id="size_table_row">
+                                                        <th>Size</th>
+                                                        <td><input type="text" name="size_cost[basic]" value="6654" class="form-controls size_txt_cal"></td>
+                                                        <td><input type="text" name="size_cost[cut_fold]" value="545" class="form-controls size_txt_cal"></td>
+                                                        <td><input type="text" name="size_cost[diecut]" value="55" class="form-controls size_txt_cal"></td>
+                                                        <td><input type="text" name="size_cost[nonwoven]" value="552" class="form-controls size_txt_cal"></td>
+                                                        <td><input type="text" name="size_cost[iron_on_back]" value="22" class="form-controls size_txt_cal"></td>
+                                                        <td><input type="text" name="size_cost[extra]" value="055" class="form-controls size_txt_cal"></td>
+                                                        <td><input type="text" name="size_cost[total]" value="7883" class="form-controls" readonly id="size_total_value"></td>
+                                                        <td><input type="text" name="size_cost[offered]" value="55" class="form-controls"></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+
+                                            <button type="button" class="btn btn-success font-weight-bold m-2 text-white" id="addRow">Add Row</button>
+                                            <table class="table table-bordered text-nowrap">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Needle No</th>
+                                                        <th>Pantone</th>
+                                                        <th>Color</th>
+                                                        <th>Shade</th>
+                                                        <th>Denier</th>
+                                                        <th>A</th>
+                                                        <th>B</th>
+                                                        <th>C</th>
+                                                        <th>D</th>
+                                                        <th>E</th>
+                                                        <th>Action</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="add_new_row">
+                                                                                                            <input type="hidden" id="form_row_count" value="2">
+                                                                                                                    <tr id="inputFormRow">
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[0][needle_no]" value="7878" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[0][pantone]" value="78" placeholder="Enter the value"></td>
+                                                                <td><input type="color" style="border-radius:.25rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[0][color]" value="#29610f" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;" name="needle[0][color_shade]" value="45552"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[0][denier]"  value="44456" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[0][a]" value="46546" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[0][b]" value="4564" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[0][c]" value="6456" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[0][d]" value="6456" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[0][e]" value="10" placeholder="Enter the value"></td>
+                                                                <td><button id="removeRow" class="btn btn-danger" type="button">remove</button></td>
+                                                            </tr>
+                                                                                                                    <tr id="inputFormRow">
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[1][needle_no]" value="7878" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[1][pantone]" value="5645" placeholder="Enter the value"></td>
+                                                                <td><input type="color" style="border-radius:.25rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[1][color]" value="#d83131" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;" name="needle[1][color_shade]" value="65456"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[1][denier]"  value="546" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[1][a]" value="899" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[1][b]" value="99" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[1][c]" value="878" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[1][d]" value="996" placeholder="Enter the value"></td>
+                                                                <td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle[1][e]" value="987" placeholder="Enter the value"></td>
+                                                                <td><button id="removeRow" class="btn btn-danger" type="button">remove</button></td>
+                                                            </tr>
+                                                                                                                                                            </tbody>
+                                                
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="form-group">
+                                            <div class="object-fit-container">   
+                                                                                                                                                            <img class="object-fit-cover" id="result" />
+                                                                                                                                                </div>
+                                            <div class="mt-4">
+                                                <label for="file">Front Image</label>
+                                                <input type="hidden" id="front_image_height">
+                                                <input type="hidden" id="front_image_width">
+                                                <input type="file" id="file" accept="image/*" name="front_crop_image">
+                                            </div>
+                                        </div> 
+                                        <hr>
+                                        <div class="form-group">
+                                            <div class="object-fit-container">  
+                                                                                                                                                            <img class="object-fit-cover" id="result1" />
+                                                                                                     
+                                            </div>
+                                            <div class="mt-4">
+                                                <label for="file">Back Image</label>
+                                                <input type="file" id="file1" accept="image/*" name="back_crop_image">
+                                            </div>
+                                        </div> 
+                                        <hr>
+                                        <div class="form-group">
+                                            <div class="object-fit-container">   
+                                                                                                                                                            <img class="object-fit-cover" id="result2" />
+                                                                                                     
+                                            </div>
+                                            <div class="mt-4">
+                                                <label for="file">All View Image</label>
+                                                <input type="file" id="file2" accept="image/*" name="all_view_crop_image">                                               
+                                            </div>
+                                        </div> 
+                                        <hr>
+                                        <div class="form-group">
+                                            <div class="mt-4">
+                                                <label for="document_name">Design File</label>
+                                                <input type="file" id="document_name" multiple name="design_file[]">
+                                            </div>
+                                        </div> 
+                                    </div>
+                                   
+                                </div>
+                            </div>
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary float-right">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="http://127.0.0.1:8000/css/pixelarity.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha384-vk5WoKIaW/vJyUAd9n/wmopsmNhiy+L2Z+SBxGYnUkunIxVxAv/UtMOhba/xskxh" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#main_table_row").on('input', '.main_txt_cal', function () {
+                var calculated_total_sum = 0;
+                
+                $("#main_table_row .main_txt_cal").each(function () {
+                    var get_textbox_value = $(this).val();
+                    if ($.isNumeric(get_textbox_value)) {
+                        calculated_total_sum += parseFloat(get_textbox_value);
+                    }                  
+                });
+                $("#main_total_value").val(calculated_total_sum);
+                console.log(calculated_total_sum);
+            });
+
+            $("#tab_table_row").on('input', '.tab_txt_cal', function () {
+                var calculated_total_sum = 0;
+                
+                $("#tab_table_row .tab_txt_cal").each(function () {
+                    var get_textbox_value = $(this).val();
+                    if ($.isNumeric(get_textbox_value)) {
+                        calculated_total_sum += parseFloat(get_textbox_value);
+                    }                  
+                });
+                $("#tab_total_value").val(calculated_total_sum);
+                console.log(calculated_total_sum);
+            });
+
+            $("#size_table_row").on('input', '.size_txt_cal', function () {
+                var calculated_total_sum = 0;
+                
+                $("#size_table_row .size_txt_cal").each(function () {
+                    var get_textbox_value = $(this).val();
+                    if ($.isNumeric(get_textbox_value)) {
+                        calculated_total_sum += parseFloat(get_textbox_value);
+                    }                  
+                });
+                $("#size_total_value").val(calculated_total_sum);
+                console.log(calculated_total_sum);
+            });
+
+         
+        });
+        // var index = $("#form_row_count").val() || 0;
+        var index = 0;
+        $("#addRow").click(function () {
+            index++;
+            var html = '';
+            html +='<tr id="inputFormRow">';
+            html +='<td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;" name="needle['+index+'][needle_no]" value="" placeholder="Enter the value"></td>';
+            html +='<td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;" name="needle['+index+'][pantone]" value="" placeholder="Enter the value"></td>';
+            html +='<td><input type="color" style="border-radius:.25rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;" class="form-controls" name="needle['+index+'][color]" value="" placeholder="Enter the value"></td>';
+            html +='<td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle['+index+'][color_shade]" value=""></td>';
+            html +='<td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle['+index+'][denier]"  value="" placeholder="Enter the value"></td>';
+            html +='<td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;" name="needle['+index+'][a]" value="" placeholder="Enter the value"></td>';
+            html +='<td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;" name="needle['+index+'][b]" value="" placeholder="Enter the value"></td>';
+            html +='<td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle['+index+'][c]" value="" placeholder="Enter the value"></td>';
+            html +='<td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle['+index+'][d]" value="" placeholder="Enter the value"></td>';
+            html +='<td><input type="text" style="border-radius:.25rem; padding:.375rem .75rem; color: #495057; background-color: #fff;  border: 1px solid #ced4da;"  name="needle['+index+'][e]" value="" placeholder="Enter the value"></td>';
+            html +='<td><button id="removeRow" class="btn btn-danger" type="button">remove</button></td>';
+            html +='</tr>';
+        
+            $('#add_new_row').append(html);
+        });
+
+        $(document).on('click', '#removeRow', function () {
+            let tabl = $("#add_new_row > tr").length;
+            if(tabl === 1)
+            {
+                // $('#add_new_row').html('<tr><td colspan="10" class="text-center">No Needle pantone found...</td></tr>');
+                alert("Sorry you can't remove this row");
+            }
+            else
+            {
+                index--;
+
+               $(this).closest('#inputFormRow').remove();
+            }
+        });
+
+
+
+        $("#tab_label").on("change",function(){
+            $(".tab_label_input").toggleClass("d-none");
+        });
+
+        $("#size_label").on("change",function(){
+            $(".size_label_input").toggleClass("d-none");
+        });
+    </script>
+                </div>
+            </div>
+
+        </div>
+
+        
+        
+        
+        
+    </div>
+
+    
+            <script src="http://127.0.0.1:8000/vendor/jquery/jquery.min.js"></script>
+        <script src="http://127.0.0.1:8000/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="http://127.0.0.1:8000/vendor/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+
+        
+        
+        <script src="http://127.0.0.1:8000/vendor/adminlte/dist/js/adminlte.min.js"></script>
+       
+		<script type="text/javascript" src="http://127.0.0.1:8000/js/pixelarity-face.js"></script>
+		<script type="text/javascript" src="http://127.0.0.1:8000/js/script-face.js"></script>
+    
+    
+    
+    
+            
+</body>
+
+</html>
