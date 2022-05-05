@@ -44,14 +44,14 @@
                                         <div class="row">
                                             <div class="form-group col-4">
                                                 <label for="customer_name">Customer Name <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control @error('customer_name') is-invalid @enderror" id="customer_name" name="customer_name" value="{{ $editCustomer ? old('company_name',$editCustomer->company_name) : old('company_name') }}" placeholder="Customer Name">
+                                                <input type="text" class="form-control @error('customer_name') is-invalid @enderror" id="customer_name" name="customer_name" value="{{ $editCustomer ? old('customer_name',$editCustomer->customer_name) : old('customer_name') }}" placeholder="Customer Name">
                                                 @error('customer_name')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="form-group col-4">
                                                 <label for="group_company">Group Company <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control @error('group_company') is-invalid @enderror" id="company_phone" name="group_company" value="{{ $editCustomer ? old('group_company',$editCustomer->company_phone) : old('group_company') }}" placeholder="Group Company">
+                                                <input type="text" class="form-control @error('group_company') is-invalid @enderror" id="company_phone" name="group_company" value="{{ $editCustomer ? old('group_company',$editCustomer->group_company) : old('group_company') }}" placeholder="Group Company">
                                                 @error('group_company')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
@@ -65,7 +65,7 @@
                                             </div>
                                             <div class="form-group col-4">
                                                 <label for="email">Email <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ $editCustomer ? old('company_name',$editCustomer->company_name) : old('company_name') }}" placeholder="Email">
+                                                <input type="text" class="form-control @error('email') is-invalid @enderror" id="email" name="email" value="{{ $editCustomer ? old('email',$editCustomer->email) : old('email') }}" placeholder="Email">
                                                 @error('email')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
@@ -75,7 +75,7 @@
                                         <div class="row">
                                             <div class="form-group col-12">
                                                 <label for="customer_address">Address <span class="text-danger">*</span></label>
-                                                <textarea class="form-control @error('customer_address') is-invalid @enderror" id="customer_address" name="customer_address">{{ $editCustomer ? old('customer_address',$editCustomer->billing_address) : old('customer_address') }}</textarea>
+                                                <textarea class="form-control @error('customer_address') is-invalid @enderror" id="customer_address" name="customer_address">{{ $editCustomer ? old('customer_address',$editCustomer->customer_address) : old('customer_address') }}</textarea>
                                                 @error('customer_address')
                                                     <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
@@ -84,7 +84,7 @@
                                         <div class="row">
                                             <div class="form-group col-4">
                                                 <label for="mobile_number">Mobile and Lan <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control @error('mobile_number') is-invalid @enderror" id="mobile_number" name="mobile_number" value="{{ $editCustomer ? old('mobile',$editCustomer->mobile) : old('mobile') }}" placeholder="Mobile">
+                                                <input type="text" class="form-control @error('mobile_number') is-invalid @enderror" id="mobile_number" name="mobile_number" value="{{ $editCustomer ? old('mobile_number',$editCustomer->mobile_number) : old('mobile_number') }}" placeholder="Mobile">
                                                 @error('mobile_number')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
@@ -98,7 +98,7 @@
                                             </div>
                                             <div class="form-group col-4">
                                                 <label for="gst_no">GSTIN <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control @error('gst_no') is-invalid @enderror" id="gst_no" name="GST" value="{{ $editCustomer ? old('graGSTde',$editCustomer->GST) : old('GST') }}" placeholder="GSTIN">
+                                                <input type="text" class="form-control @error('gst_no') is-invalid @enderror" id="gst_no" name="GST" value="{{ $editCustomer ? old('gst_no',$editCustomer->gst_no) : old('gst_no') }}" placeholder="GSTIN">
                                                 @error('gst_no')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
@@ -109,11 +109,18 @@
                                             <div class="form-group col-4">
                                                 <label for="status">Region</label>
                                                 <select class="form-control @error('customer_region') is-invalid @enderror" id="customer_region" name="customer_region">
-                                                   <option value="" selected disabled>Select</option>
-                                                   <option value="1">East</option>
-                                                   <option value="2">West</option>
-                                                   <option value="3">South</option>
-                                                   <option value="4">North</option>
+                                                    @if($editCustomer)
+                                                        <option value='1' {{ old('customer_region') == '1' ? 'selected' : ($editCustomer->customer_region == '1' ? 'selected' : '') }}>East </option>
+                                                        <option value='2' {{ old('customer_region') == '2' ? 'selected' : ($editCustomer->customer_region == '2' ? 'selected' : '') }}>West</option>
+                                                        <option value='3' {{ old('customer_region') == '3' ? 'selected' : ($editCustomer->customer_region == '3' ? 'selected' : '') }}>North </option>
+                                                        <option value='4' {{ old('customer_region') == '4' ? 'selected' : ($editCustomer->customer_region == '4' ? 'selected' : '') }}>South</option>
+                                                    @else
+                                                        <option selected disabled>Select </option>
+                                                        <option value='1' {{ old('customer_region') == "1" ? 'selected' : '' }}>East </option>
+                                                        <option value='2' {{ old('customer_region') == "2" ? 'selected' : '' }}>West</option>
+                                                        <option value='3' {{ old('customer_region') == "3" ? 'selected' : '' }}>North</option>
+                                                        <option value='4' {{ old('customer_region') == "4" ? 'selected' : '' }}>South</option>
+                                                    @endif
                                                 </select>
                                                 @error('customer_region')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
@@ -123,11 +130,18 @@
                                             <div class="form-group col-4">
                                                 <label for="status">Customer Group</label>
                                                 <select class="form-control @error('customer_group') is-invalid @enderror" id="customer_group" name="customer_group">
-                                                   <option value="" selected disabled>Select</option>
-                                                   <option value="1">Kolkata</option>
-                                                   <option value="2">East Kolkata</option>
-                                                   <option value="3">Chennai</option>
-                                                   <option value="4">Delhi NCR</option>
+                                                    @if($editCustomer)
+                                                        <option value='1' {{ old('customer_group') == '1' ? 'selected' : ($editCustomer->customer_group == '1' ? 'selected' : '') }}>Kolkata </option>
+                                                        <option value='2' {{ old('customer_group') == '2' ? 'selected' : ($editCustomer->customer_group == '2' ? 'selected' : '') }}>East Kolkata </option>
+                                                        <option value='3' {{ old('customer_group') == '3' ? 'selected' : ($editCustomer->customer_group == '3' ? 'selected' : '') }}>Chennai </option>
+                                                        <option value='4' {{ old('customer_group') == '4' ? 'selected' : ($editCustomer->customer_group == '4' ? 'selected' : '') }}>Delhi NCR </option>
+                                                    @else
+                                                        <option selected disabled>Select </option>
+                                                        <option value='1' {{ old('customer_group') == "1" ? 'selected' : '' }}>Kolkata </option>
+                                                        <option value='2' {{ old('customer_group') == "2" ? 'selected' : '' }}>East Kolkata </option>
+                                                        <option value='3' {{ old('customer_group') == "3" ? 'selected' : '' }}>Chennai</option>
+                                                        <option value='4' {{ old('customer_group') == "4" ? 'selected' : '' }}>Delhi NCR</option>
+                                                    @endif                                                  
                                                 </select>
                                                 @error('customer_group')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
@@ -157,28 +171,28 @@
                                             <h5 class="mt-2 col-12 font-weight-bold">{{ _('Other Details') }}</h5>
                                             <div class="form-group col-12 mt-3">
                                                 <label for="sales_office">Sales office</label>
-                                                <input type="text" class="form-control @error('sales_office') is-invalid @enderror" id="sales_office" name="sales_office" value="{{ $editCustomer ? old('account_no',$editCustomer->account_no) : old('account_no') }}" placeholder="Sales Office">
+                                                <input type="text" class="form-control @error('sales_office') is-invalid @enderror" id="sales_office" name="sales_office" value="{{ $editCustomer ? old('sales_office',$editCustomer->sales_office) : old('sales_office') }}" placeholder="Sales Office">
                                                 @error('sales_office')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="form-group col-4 mt-3">
                                                 <label for="sold_party">Sold to Party</label>
-                                                <input type="text" class="form-control @error('sold_party') is-invalid @enderror" id="sold_party" name="sold_party" value="{{ $editCustomer ? old('IFSCCode',$editCustomer->IFSCCode) : old('sold_party') }}" placeholder="Sold to Party">
+                                                <input type="text" class="form-control @error('sold_party') is-invalid @enderror" id="sold_party" name="sold_party" value="{{ $editCustomer ? old('sold_party',$editCustomer->sold_party) : old('sold_party') }}" placeholder="Sold to Party">
                                                 @error('sold_party')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="form-group col-4 mt-3">
                                                 <label for="ship_party">Ship to Party</label>
-                                                <input type="text" class="form-control @error('ship_party') is-invalid @enderror" id="ship_party" name="ship_party" value="{{ $editCustomer ? old('IFSCCode',$editCustomer->IFSCCode) : old('IFSCCode') }}" placeholder="Ship to Party">
+                                                <input type="text" class="form-control @error('ship_party') is-invalid @enderror" id="ship_party" name="ship_party" value="{{ $editCustomer ? old('ship_party',$editCustomer->ship_party) : old('ship_party') }}" placeholder="Ship to Party">
                                                 @error('ship_party')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="form-group col-4 mt-3">
                                                 <label for="bill_party">Bill to Party</label>
-                                                <input type="text" class="form-control @error('bill_party') is-invalid @enderror" id="bill_party" name="bill_party" value="{{ $editCustomer ? old('IFSCCode',$editCustomer->IFSCCode) : old('IFSCCode') }}" placeholder="Bill to Party">
+                                                <input type="text" class="form-control @error('bill_party') is-invalid @enderror" id="bill_party" name="bill_party" value="{{ $editCustomer ? old('bill_party',$editCustomer->bill_party) : old('bill_party') }}" placeholder="Bill to Party">
                                                 @error('bill_party')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
@@ -191,14 +205,14 @@
                                             <h5 class="mt-2 col-12 font-weight-bold">{{ _('Payer Details') }}</h5>
                                             <div class="form-group col-4 mt-3">
                                                 <label for="payer">Payer</label>
-                                                <input type="text" class="form-control @error('payer') is-invalid @enderror" id="payer" name="payer" value="{{ $editCustomer ? old('IFSCCode',$editCustomer->IFSCCode) : old('sold_party') }}" placeholder="Payer">
+                                                <input type="text" class="form-control @error('payer') is-invalid @enderror" id="payer" name="payer" value="{{ $editCustomer ? old('payer',$editCustomer->payer) : old('payer') }}" placeholder="Payer">
                                                 @error('payer')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
                                             </div>
                                             <div class="form-group col-4 mt-3">
                                                 <label for="payer_name">Payer Name</label>
-                                                <input type="text" class="form-control @error('payer_name') is-invalid @enderror" id="payer_name" name="payer_name" value="{{ $editCustomer ? old('IFSCCode',$editCustomer->IFSCCode) : old('IFSCCode') }}" placeholder="Payer Name">
+                                                <input type="text" class="form-control @error('payer_name') is-invalid @enderror" id="payer_name" name="payer_name" value="{{ $editCustomer ? old('payer_name',$editCustomer->payer_name) : old('payer_name') }}" placeholder="Payer Name">
                                                 @error('payer_name')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
@@ -206,7 +220,7 @@
 
                                             <div class="form-group col-4 mt-3">
                                                 <label for="recon_account">Recon Account</label>
-                                                <input type="text" class="form-control @error('recon_account') is-invalid @enderror" id="recon_account" name="recon_account" value="{{ $editCustomer ? old('IFSCCode',$editCustomer->IFSCCode) : old('IFSCCode') }}" placeholder="Recon Account">
+                                                <input type="text" class="form-control @error('recon_account') is-invalid @enderror" id="recon_account" name="recon_account" value="{{ $editCustomer ? old('recon_account',$editCustomer->recon_account) : old('recon_account') }}" placeholder="Recon Account">
                                                 @error('recon_account')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror

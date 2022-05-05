@@ -264,7 +264,7 @@ return [
         // ],
         [
             'text'        => ['Customers'],
-            'url'         => 'buyers',
+            'url'         => 'customers',
             // 'icon'        => 'fas fa-fw fa-user',
             'icon'       => 'people.png',
             'can'         => 'AdminAccess'
