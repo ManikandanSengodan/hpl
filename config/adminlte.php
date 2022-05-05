@@ -468,6 +468,12 @@ return [
         
         ['header' => 'account_settings'],
         [
+            'text' => ['Profile'],
+            'url'  => 'viewprofile',
+            'icon'       => 'admin.png',
+            // 'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
             'text' => ['Change Password'],
             'url'  => 'change-password',
             'icon'       => 'padlock.png',

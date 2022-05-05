@@ -48,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
     Route::put('customers/{buyer}', [\App\Http\Controllers\Admin\CustomerController::class, 'update'])->name('customer.update');
     Route::get('customers/{buyer}', [\App\Http\Controllers\Admin\CustomerController::class, 'show'])->name('customer.show');
     Route::delete('customers/{buyer}', [\App\Http\Controllers\Admin\CustomerController::class, 'destroy'])->name('customer.destroy');
+    Route::get('viewprofile', [\App\Http\Controllers\Admin\CustomerController::class, 'viewprofile'])->name('customer.viewprofile');
 
     Route::get('stafflist/{role}', [\App\Http\Controllers\Admin\StaffController::class, 'index'])->name('staffs.index');
     Route::get('staffs/create', [\App\Http\Controllers\Admin\StaffController::class, 'create'])->name('staffs.create');
