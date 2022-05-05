@@ -26,12 +26,9 @@
                                 <thead>
                                 <tr>
                                     <th style="width: 50px">S.No</th>
-                                    <th>Customer</th>
-                                    <th>Category</th>
-                                    <th>Sales Rep</th>
-                                    <th>Balance</th>
-                                    <th>Name</th>
-                                    <th>Mobile No</th>
+                                    <th>Customer Code</th>
+                                    <th>Customer Name</th>
+                                    <th>Mobile Number</th>
                                     <th style="width: 200px">Action</th>
                                 </tr>
                                 </thead>
@@ -42,11 +39,11 @@
 
                                         <tr>
                                             <td>{{ $i++ }}</td>
-                                            <td>{{ ucwords($buyer->company_name) }}</td>
-                                            <td>{{ $buyer->categoryMasterDetail ? ucwords($buyer->categoryMasterDetail->category_name) : '-'}}</td>
-                                            <td>{{ $buyer->salesRep ? $buyer->salesRep->name : '-' }}</td>
-                                            <td>{{ $buyer->opening_balance }}</td>
-                                            <td>{{ $buyer->full_name }}</td>
+                                            <td>{{ ucwords($buyer->customer_code) }}</td>
+                                            {{-- <td>{{ $buyer->categoryMasterDetail ? ucwords($buyer->categoryMasterDetail->category_name) : '-'}}</td> --}}
+                                            {{-- <td>{{ $buyer->salesRep ? $buyer->salesRep->name : '-' }}</td> --}}
+                                            {{-- <td>{{ $buyer->opening_balance }}</td> --}}
+                                            <td>{{ $buyer->customer_name }}</td>
                                             <td>{{ $buyer->mobile_number }}</td>
                                             <td>
                                                 <a href="{{ route('customer.show',$buyer->id) }}" class="btn btn-sm btn-warning">View</a>

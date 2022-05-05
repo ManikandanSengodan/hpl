@@ -8,7 +8,7 @@
             <h1>{{ __('Customer - ') . $buyer->first_name}}</h1>
         </div>
         <div class="col-sm-6">
-            <a href="{{ route('buyers.index') }}" class="btn bg-gradient-primary float-right">{{ __('Back') }}</a>
+            <a href="{{ route('customer.index') }}" class="btn bg-gradient-primary float-right">{{ __('Back') }}</a>
         </div>
     </div>
 @stop
@@ -26,7 +26,7 @@
                         <div class="card-header">
                             <h3 class="card-title">{{ __('Update Customers') }}</h3>
                         </div>
-                        <form method="POST" action="{{ route('buyers.update', $buyer->id) }}" novalidate>
+                        <form method="POST" action="{{ route('customer.update', $buyer->id) }}" novalidate>
                             @method('PUT')
                             @csrf
                             <div class="card-body row">

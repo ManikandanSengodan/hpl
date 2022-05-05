@@ -90,7 +90,7 @@ class CustomerController extends Controller
         CustomerMaster::where('id', $buyer->id)->update($data);
 
         return redirect()
-            ->route("buyers.index")
+            ->route("customer.index")
             ->with("warning", "Customers updated successfully");
     }
 
@@ -105,7 +105,7 @@ class CustomerController extends Controller
     {
         $buyer->delete();
         return redirect()
-            ->route("buyers.index")
+            ->route("customer.index")
             ->with("danger", "Customers deleted successfully");
     }
 }

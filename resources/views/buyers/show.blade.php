@@ -16,8 +16,8 @@
                         <div class="card-header">
                             <h3 class="card-title">Customer Detail</h3>
                             <div class="float-right">
-                                <a href="{{ route('buyers.edit',$buyer->id) }}" class="btn bg-gradient-warning btn-md mr-2">{{ __('Edit') }}</a>
-                                <form method="POST" action="{{ route('buyers.destroy', $buyer->id) }}"
+                                <a href="{{ route('customer.edit',$buyer->id) }}" class="btn bg-gradient-warning btn-md mr-2">{{ __('Edit') }}</a>
+                                <form method="POST" action="{{ route('customer.destroy', $buyer->id) }}"
                                       accept-charset="UTF-8"
                                       style="display: inline-block;"
                                       onsubmit="return confirm('Are you sure do you want to delete?');">
@@ -25,7 +25,7 @@
                                     @method('DELETE')
                                     <input class="btn bg-gradient-danger btn-md mr-2" type="submit" value="Delete">
                                 </form>
-                                <a href="{{ route('buyers.index') }}" class="btn bg-gradient-primary btn-md mr-2">{{ __('Back') }}</a>
+                                <a href="{{ route('customer.index') }}" class="btn bg-gradient-primary btn-md mr-2">{{ __('Back') }}</a>
                             </div>
                         </div>
                         <!-- /.card-header -->
