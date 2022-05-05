@@ -38,7 +38,31 @@ class CustomerMaster extends Model
         "company_name",
         "company_phone",
         "billing_address",
-        "shipping_address"
+        "shipping_address",
+
+        // New Table
+        "customer_name",
+        "group_company",
+        "mobile_number",
+        "pan",
+        "password",
+        "gst_no",
+        "customer_address",
+        "customer_region",
+        "customer_group",
+        "sold_party",
+        "ship_party",
+        "bill_party",
+        "sales_office",
+        "payer",
+        "payer_name",
+        "recon_account"
+
+
+
+
+
+
         
     ];
 

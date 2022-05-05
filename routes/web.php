@@ -41,13 +41,13 @@ Route::middleware(['auth'])->group(function () {
     Route::get('sellers/{seller}', [\App\Http\Controllers\Admin\SellerController::class, 'show'])->name('sellers.show');
     Route::delete('sellers/{seller}', [\App\Http\Controllers\Admin\SellerController::class, 'destroy'])->name('sellers.destroy');
 
-    Route::get('buyers', [\App\Http\Controllers\Admin\BuyerController::class, 'index'])->name('buyers.index');
-    Route::get('buyers/create', [\App\Http\Controllers\Admin\BuyerController::class, 'create'])->name('buyers.create');
-    Route::post('buyers', [\App\Http\Controllers\Admin\BuyerController::class, 'store'])->name('buyers.store');
-    Route::get('buyers/{buyer}/edit', [\App\Http\Controllers\Admin\BuyerController::class, 'edit'])->name('buyers.edit');
-    Route::put('buyers/{buyer}', [\App\Http\Controllers\Admin\BuyerController::class, 'update'])->name('buyers.update');
-    Route::get('buyers/{buyer}', [\App\Http\Controllers\Admin\BuyerController::class, 'show'])->name('buyers.show');
-    Route::delete('buyers/{buyer}', [\App\Http\Controllers\Admin\BuyerController::class, 'destroy'])->name('buyers.destroy');
+    Route::get('customers', [\App\Http\Controllers\Admin\CustomerController::class, 'index'])->name('customer.index');
+    Route::get('customers/create', [\App\Http\Controllers\Admin\CustomerController::class, 'create'])->name('customer.create');
+    Route::post('customers', [\App\Http\Controllers\Admin\CustomerController::class, 'store'])->name('customer.store');
+    Route::get('customers/{buyer}/edit', [\App\Http\Controllers\Admin\CustomerController::class, 'edit'])->name('customer.edit');
+    Route::put('customers/{buyer}', [\App\Http\Controllers\Admin\CustomerController::class, 'update'])->name('customer.update');
+    Route::get('customers/{buyer}', [\App\Http\Controllers\Admin\CustomerController::class, 'show'])->name('customer.show');
+    Route::delete('customers/{buyer}', [\App\Http\Controllers\Admin\CustomerController::class, 'destroy'])->name('customer.destroy');
 
     Route::get('stafflist/{role}', [\App\Http\Controllers\Admin\StaffController::class, 'index'])->name('staffs.index');
     Route::get('staffs/create', [\App\Http\Controllers\Admin\StaffController::class, 'create'])->name('staffs.create');

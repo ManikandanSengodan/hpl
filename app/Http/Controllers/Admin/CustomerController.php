@@ -11,11 +11,12 @@ use App\Models\Staf_master;
 use Illuminate\Support\Facades\Hash;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\User;
 use DB;
 
 
 
-class BuyerController extends Controller
+class CustomerController extends Controller
 {
     public function index(Request $request)
     {
@@ -34,19 +35,27 @@ class BuyerController extends Controller
 
     public function store(BuyerRequest $request)
     {
-        if($request->same_as){
-            $shipping = $request->billing_address;
-        }else{
-            $shipping = $request->shipping_address;
-        }
+        // if($request->same_as){
+        //     $shipping = $request->billing_address;
+        // }else{
+        //     $shipping = $request->shipping_address;
+        // }
 
-        $data                       = $request->validated(); 
+        $data                       = $request->validated();
         $data['password']           = Hash::make($request->password);
-
+        
+        $user = User::create([
+            'name' => $request->customer_name,
+            'password' => Hash::make($request->password),
+            'email' => $request->email,
+            'phone' => $request->mobile_number,
+            'status' => $request->status,
+            'role_id' => 0,
+        ]);
         CustomerMaster::create($data);
 
         return redirect()
-            ->route("buyers.index")
+            ->route("customer.index")
             ->with("success", "Buyer created successfully.");
     }
 
@@ -61,11 +70,11 @@ class BuyerController extends Controller
     public function update(BuyerRequest $request, CustomerMaster $buyer)
     {
         //dd($request->all());
-        if($request->same_as){
-            $shipping = $request->billing_address;
-        }else{
-            $shipping = $request->shipping_address;
-        }
+        // if($request->same_as){
+        //     $shipping = $request->billing_address;
+        // }else{
+        //     $shipping = $request->shipping_address;
+        // }
 
         $data                    = $request->validated(); 
 
