@@ -69,78 +69,13 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('designers/{designer}', [\App\Http\Controllers\Admin\DesignerController::class, 'destroy'])->name('designers.destroy');
 
     //MOU
-    Route::get('mou', [\App\Http\Controllers\Admin\MouController::class, 'index'])->name('mou.index');
-    Route::get('mou/create', [\App\Http\Controllers\Admin\MouController::class, 'create'])->name('mou.create');
-    Route::post('mou', [\App\Http\Controllers\Admin\MouController::class, 'store'])->name('mou.store');
-    Route::get('mou/{designer}/edit', [\App\Http\Controllers\Admin\MouController::class, 'edit'])->name('mou.edit');
-    Route::put('mou/{designer}', [\App\Http\Controllers\Admin\MouController::class, 'update'])->name('mou.update');
-    Route::get('mou/{designer}', [\App\Http\Controllers\Admin\MouController::class, 'show'])->name('mou.show');
-    Route::delete('mou/{designer}', [\App\Http\Controllers\Admin\MouController::class, 'destroy'])->name('mou.destroy');
-
-    //Sales Rep
-
-//    Route::get('salesreps', [\App\Http\Controllers\Admin\SalesRepController::class, 'index'])->name('salesreps.index');
-//    Route::get('salesreps/create', [\App\Http\Controllers\Admin\SalesRepController::class, 'create'])->name('salesreps.create');
-//    Route::post('salesreps', [\App\Http\Controllers\Admin\SalesRepController::class, 'store'])->name('salesreps.store');
-//    Route::get('salesreps/{salesrep}/edit', [\App\Http\Controllers\Admin\SalesRepController::class, 'edit'])->name('salesreps.edit');
-//    Route::put('salesreps/{salesrep}', [\App\Http\Controllers\Admin\SalesRepController::class, 'update'])->name('salesreps.update');
-//    Route::get('salesreps/{salesrep}', [\App\Http\Controllers\Admin\SalesRepController::class, 'show'])->name('salesreps.show');
-//    Route::delete('salesreps/{salesrep}', [\App\Http\Controllers\Admin\SalesRepController::class, 'destroy'])->name('salesreps.destroy');
-
-
-    //Printers
-
-//    Route::get('printers', [\App\Http\Controllers\Admin\PrinterController::class, 'index'])->name('printers.index');
-//    Route::get('printers/create', [\App\Http\Controllers\Admin\PrinterController::class, 'create'])->name('printers.create');
-//    Route::post('printers', [\App\Http\Controllers\Admin\PrinterController::class, 'store'])->name('printers.store');
-//    Route::get('printers/{printer}/edit', [\App\Http\Controllers\Admin\PrinterController::class, 'edit'])->name('printers.edit');
-//    Route::put('printers/{printer}', [\App\Http\Controllers\Admin\PrinterController::class, 'update'])->name('printers.update');
-//    Route::get('printers/{printer}', [\App\Http\Controllers\Admin\PrinterController::class, 'show'])->name('printers.show');
-//    Route::delete('printers/{printer}', [\App\Http\Controllers\Admin\PrinterController::class, 'destroy'])->name('printers.destroy');
-
-   //finishers
-
-//   Route::get('finishers', [\App\Http\Controllers\Admin\FinisherController::class, 'index'])->name('finishers.index');
-//   Route::get('finishers/create', [\App\Http\Controllers\Admin\FinisherController::class, 'create'])->name('finishers.create');
-//   Route::post('finishers', [\App\Http\Controllers\Admin\FinisherController::class, 'store'])->name('finishers.store');
-//   Route::get('finishers/{finisher}/edit', [\App\Http\Controllers\Admin\FinisherController::class, 'edit'])->name('finishers.edit');
-//   Route::put('finishers/{finisher}', [\App\Http\Controllers\Admin\FinisherController::class, 'update'])->name('finishers.update');
-//   Route::get('finishers/{finisher}', [\App\Http\Controllers\Admin\FinisherController::class, 'show'])->name('finishers.show');
-//   Route::delete('finishers/{finisher}', [\App\Http\Controllers\Admin\FinisherController::class, 'destroy'])->name('finishers.destroy');
-
-
-   //Loom Operator
-
-//   Route::get('loomoperators', [\App\Http\Controllers\Admin\LoomOperatorController::class, 'index'])->name('loomoperators.index');
-//   Route::get('loomoperators/create', [\App\Http\Controllers\Admin\LoomOperatorController::class, 'create'])->name('loomoperators.create');
-//   Route::post('loomoperators', [\App\Http\Controllers\Admin\LoomOperatorController::class, 'store'])->name('loomoperators.store');
-//   Route::get('loomoperators/{loomoperator}/edit', [\App\Http\Controllers\Admin\LoomOperatorController::class, 'edit'])->name('loomoperators.edit');
-//   Route::put('loomoperators/{loomoperator}', [\App\Http\Controllers\Admin\LoomOperatorController::class, 'update'])->name('loomoperators.update');
-//   Route::get('loomoperators/{loomoperator}', [\App\Http\Controllers\Admin\LoomOperatorController::class, 'show'])->name('loomoperators.show');
-//   Route::delete('loomoperators/{loomoperator}', [\App\Http\Controllers\Admin\LoomOperatorController::class, 'destroy'])->name('loomoperators.destroy');
-//
-
-
-   //Finishing Operators
-
-//   Route::get('finishingoperators', [\App\Http\Controllers\Admin\FinishingOperatorController::class, 'index'])->name('finishingoperators.index');
-//   Route::get('finishingoperators/create', [\App\Http\Controllers\Admin\FinishingOperatorController::class, 'create'])->name('finishingoperators.create');
-//   Route::post('finishingoperators', [\App\Http\Controllers\Admin\FinishingOperatorController::class, 'store'])->name('finishingoperators.store');
-//   Route::get('finishingoperators/{finishingoperator}/edit', [\App\Http\Controllers\Admin\FinishingOperatorController::class, 'edit'])->name('finishingoperators.edit');
-//   Route::put('finishingoperators/{finishingoperator}', [\App\Http\Controllers\Admin\FinishingOperatorController::class, 'update'])->name('finishingoperators.update');
-//   Route::get('finishingoperators/{finishingoperator}', [\App\Http\Controllers\Admin\FinishingOperatorController::class, 'show'])->name('finishingoperators.show');
-//   Route::delete('finishingoperators/{finishingoperator}', [\App\Http\Controllers\Admin\FinishingOperatorController::class, 'destroy'])->name('finishingoperators.destroy');
-
-
-   //Quality Checkers
-
-//   Route::get('qualitycheckers', [\App\Http\Controllers\Admin\QualityCheckerController::class, 'index'])->name('qualitycheckers.index');
-//   Route::get('qualitycheckers/create', [\App\Http\Controllers\Admin\QualityCheckerController::class, 'create'])->name('qualitycheckers.create');
-//   Route::post('qualitycheckers', [\App\Http\Controllers\Admin\QualityCheckerController::class, 'store'])->name('qualitycheckers.store');
-//   Route::get('qualitycheckers/{qualitychecker}/edit', [\App\Http\Controllers\Admin\QualityCheckerController::class, 'edit'])->name('qualitycheckers.edit');
-//   Route::put('qualitycheckers/{qualitychecker}', [\App\Http\Controllers\Admin\QualityCheckerController::class, 'update'])->name('qualitycheckers.update');
-//   Route::get('qualitycheckers/{qualitychecker}', [\App\Http\Controllers\Admin\QualityCheckerController::class, 'show'])->name('qualitycheckers.show');
-//   Route::delete('qualitycheckers/{qualitychecker}', [\App\Http\Controllers\Admin\QualityCheckerController::class, 'destroy'])->name('qualitycheckers.destroy');
+    Route::get('mous', [\App\Http\Controllers\Admin\MouController::class, 'index'])->name('mous.index');
+    Route::get('mous/create', [\App\Http\Controllers\Admin\MouController::class, 'create'])->name('mous.create');
+    Route::post('mous', [\App\Http\Controllers\Admin\MouController::class, 'store'])->name('mous.store');
+    Route::get('mous/{mou}/edit', [\App\Http\Controllers\Admin\MouController::class, 'edit'])->name('mous.edit');
+    Route::put('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'update'])->name('mous.update');
+    Route::get('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'show'])->name('mous.show');
+    Route::delete('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'destroy'])->name('mous.destroy');
 
 
 
