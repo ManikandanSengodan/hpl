@@ -82,4 +82,6 @@ class CustomerMaster extends Model
     {
         return $this->hasOne(Staf_master::class,'id','sales_rep');
     }
+
+    
 }

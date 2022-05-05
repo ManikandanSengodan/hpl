@@ -1,14 +1,14 @@
 @extends('adminlte::page')
 
-@section('title', 'Designers')
+@section('title', 'MOUs')
 
 @section('content_header')
     <div class="row mb-2">
         <div class="col-sm-6">
-            <h1>{{ __('Designers') }}</h1>
+            <h1>{{ __('MOUs') }}</h1>
         </div>
         <div class="col-sm-6">
-            <a href="{{ route('staffs.create') }}" class="btn bg-gradient-primary float-right">Add Designers</a>
+            <a href="{{ route('mous.create') }}" class="btn bg-gradient-primary float-right">Add MOU</a>
         </div>
     </div>
 @stop
@@ -28,7 +28,7 @@
                 @endforeach
                 <div class="card card-primary">
                     <div class="card-header">
-                        <h3 class="card-title">Designers</h3>
+                        <h3 class="card-title">MOU's</h3>
                       <form class="float-right d-flex search-form">
                           <button class="btn btn-sm btn-info" type="submit"  >
                             <span class=" d-flex">
@@ -44,29 +44,31 @@
                             <thead>
                             <tr>
                                 <th style="width: 100px">S.No</th>
-                                <th>Name</th>
-                                <th>Email</th>
-                                <th>Phone</th>
-                                <th>Joined On</th>
-                                <th>Left On</th>
+                                <th>Code</th>
+                                <th>ship-to party code</th>
+                                <th>RO</th>
+                                <th>From</th>
+                                <th>To On</th>
+                               
                                 <th style="width: 200px">Action</th>
                             </tr>
                             </thead>
                             <tbody>
-                                @php $i = ($designers->currentpage()-1)* $designers->perpage() + 1; @endphp
-                                @forelse ($designers as $designer)
+                                @php $i = ($mous->currentpage()-1)* $mous->perpage() + 1; @endphp
+                                @forelse ($mous as $mou)
                                     <tr>
                                         <td>{{ $i++ }}</td>
-                                        <td>{{ $designer->name }}</td>
-                                        <td>{{ $designer->email }}</td>
-                                        <td>{{ $designer->phone }}</td>
-                                        <td>{{$designer->joined_on}}</td>
-                                        <td>{{$designer->left_on}}</td>
+                                        <td>{{ $mou->mou_code }}</td>
+                                        <td>{{ $mou->ship_to_party_code }}</td>
+                                        <td>{{ $mou->region }}</td>
+                                        <td>{{ $mou->from_date }}</td>
+                                        <td>{{$mou->to_date}}</td>
+                                        
                                         <td>
-                                            <a href="{{ route('designers.show',$designer->id) }}" class="btn btn-sm btn-warning">View</a>
-                                            @if(!$designer->deleted_at)
-                                            <a href="{{ route('staffs.edit',$designer->id) }}" class="btn btn-sm btn-info">Edit</a>
-                                            <form method="POST" action="{{ route('designers.destroy', $designer->id) }}"
+                                            <a href="{{ route('mous.show',$mou->id) }}" class="btn btn-sm btn-warning">View</a>
+                                            @if(!$mou->deleted_at)
+                                            <a href="{{ route('mous.edit',$mou->id) }}" class="btn btn-sm btn-info">Edit</a>
+                                            <form method="POST" action="{{ route('mous.destroy', $mou->id) }}"
                                                 accept-charset="UTF-8"
                                                 style="display: inline-block;"
                                                 onsubmit="return confirm('Are you sure do you want to delete?');">
@@ -88,7 +90,7 @@
                     <!-- /.card-body -->
                     <div class="card-footer clearfix">
                         <div class="float-right">
-                            {!! $designers->links() !!}
+                            {!! $mous->links() !!}
                         </div>
                     </div>
                 </div>

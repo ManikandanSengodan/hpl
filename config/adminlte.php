@@ -272,7 +272,7 @@ return [
         ],
         [
             'text'        => ['MOUs'],
-            'url'         => 'mou',
+            'url'         => 'mous',
             // 'icon'        => 'fas fa-fw fa-user',
             'icon'       => 'people.png',
             'can'         => 'AdminAccess'

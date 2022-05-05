@@ -5,11 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Http\Requests\Admin\StaffRequest;
+use App\Http\Requests\Admin\MouRequest;
 use App\Http\Requests\Auth\ChangePasswordRequest;
 use App\Models\Staf_master;
 use App\Models\Role_master;
 use App\Models\Staf_address;
+use App\Models\Mou;
+use App\Models\CustomerMaster;
+
 use Illuminate\Support\Facades\Auth;
 use DB;
 
@@ -22,31 +25,11 @@ class MouController extends Controller
      */
     public function index(Request $request)
     {
-        $staf = Staf_master::where('role_id',1);
+        $mou = Mou::where('status',1);
 
-//        if($request->search){
-//          $columnsToSearch = DB::getSchemaBuilder()->getColumnListing('staf_masters');
-//
-//          $searchQuery = '%' . $request->search . '%';
-//
-//         $staf ->where(function ($query) use ($columnsToSearch,$searchQuery) {
-//            foreach($columnsToSearch as $column) {
-//                      $query = $query->orWhere($column, 'LIKE', $searchQuery);
-//                  }
-//			});
-//
-//        }
-      
-//        $designers = $staf->orderBy('created_at', 'DESC')->withTrashed()->paginate(config("motorTraders.paginate.perPage"));
-        $designers = $staf->orderBy('created_at', 'DESC')->paginate(config("motorTraders.paginate.perPage"));
+        $mous = $mou->orderBy('created_at', 'DESC')->paginate(config("motorTraders.paginate.perPage"));
 
-      
-      
-      /*$designers = Staf_master::where('role_id',1)->orderBy('created_at', 'DESC')->withTrashed()->paginate(
-            config("motorTraders.paginate.perPage")
-        );*/
-
-        return view("designer.index", compact("designers"));
+        return view("mou.index", compact("mous"));
     }
 
     /**
@@ -55,8 +38,8 @@ class MouController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {   $roles = Role_master::get();
-        return view("designer.create",compact("roles"));
+    {   $customers = CustomerMaster::get();
+        return view("mou.create",compact("customers"));
     }
 
     /**
@@ -65,14 +48,19 @@ class MouController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StaffRequest $request)
-    {
-        $user = Staf_master::create($request->all());
+    public function store(MouRequest $request)
+    {   $latestOrder = Mou::orderBy('created_at','DESC')->first();
+        $moucode = '#MOU'.str_pad($latestOrder->id + 1, 6, "0", STR_PAD_LEFT);
+        
+       $request['mou_code'] = $moucode;
+        
+       // echo "<pre>"; print_r($request->all());exit;
+        $mous = Mou::create($request->all());
         
        
         return redirect()
-            ->route("designers.index")
-            ->with("success", "Designers created successfully.");
+            ->route("mous.index")
+            ->with("success", "Mou created successfully.");
     }
 
     /**
@@ -81,11 +69,11 @@ class MouController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($designer)
+    public function show($mou)
     {
-        $designer = Staf_master::with('roleDetial')->withTrashed()->findOrFail($designer);
-        $address = Staf_address::where('staf_id',$designer->id)->first();
-        return view("designer.show", compact("designer","address"));
+        $mou = Mou::with('mouDetails')->withTrashed()->findOrFail($mou);
+       //echo"<pre>";print_r($mou->mouDetails);exit;
+        return view("mou.show", compact("mou"));
     }
 
     /**
@@ -94,10 +82,10 @@ class MouController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Staf_master $designer)
+    public function edit(Mou $mou)
     { 
-       
-        return view("designer.edit", compact("designer"));
+        $customers = CustomerMaster::get();
+        return view("mou.edit", compact("mou","customers"));
     }
 
     /**
@@ -107,25 +95,13 @@ class MouController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(StaffRequest $request, Staf_master $designer)
+    public function update(MouRequest $request, Mou $mou)
     {
-        $designer->update($request->all());
-        
-        $result = Staf_address::where('staf_id', $designer->id)->update(array(
-            'fullname' => $request->name,
-            'flatno' => $request->flatno,
-            'apartment' => $request->apartment,
-            'landmark' => $request->landmark,
-            'area' => $request->area,
-            'city' => $request->city,
-            'state' => $request->state,
-            'country' => $request->country,
-            'zipcode' => $request->zipcode,
-            'updated_at' => date('Y-m-d H:i:s')
-        ));
+        $mou->update($request->all());
+    
         return redirect()
-            ->route("designers.index")
-            ->with("warning", "Designers updated successfully");
+            ->route("mous.index")
+            ->with("warning", "mous updated successfully");
     
     }
 
@@ -135,11 +111,13 @@ class MouController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Staf_master $designer)
+    public function destroy(Staf_master $mou)
     {
-        $designer->delete(); 
+        $mou->delete(); 
         return redirect()
-            ->route("designers.index")
-            ->with("danger", "Designers deleted successfully");
+            ->route("mous.index")
+            ->with("danger", "mous deleted successfully");
     }
+
+   
 }
