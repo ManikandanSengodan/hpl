@@ -4,7 +4,6 @@ namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Traits\QueryScope;
-use Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
@@ -42,7 +41,6 @@ class CustomerMaster extends Model
         "shipping_address",
 
         // New Table
-        "customer_code",
         "customer_name",
         "group_company",
         "mobile_number",
@@ -59,6 +57,7 @@ class CustomerMaster extends Model
         "payer",
         "payer_name",
         "recon_account"
+
     ];
 
     protected $hidden = ["password", "remember_token"];
@@ -67,7 +66,6 @@ class CustomerMaster extends Model
         "email_verified_at" => "datetime",
     ];
 
-  
     public function setPasswordAttribute($value)
     {
         $this->attributes["password"] = bcrypt($value);

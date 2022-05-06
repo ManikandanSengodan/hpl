@@ -76,7 +76,11 @@ Route::middleware(['auth'])->group(function () {
     Route::put('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'update'])->name('mous.update');
     Route::get('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'show'])->name('mous.show');
     Route::delete('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'destroy'])->name('mous.destroy');
-
+   
+   
+   //Incentive Masters
+    Route::get('incentive/{mou_id}', [\App\Http\Controllers\Admin\MouController::class, 'incentive'])->name('incentive.view');
+    Route::post('/calculate', [\App\Http\Controllers\Admin\MouController::class, 'calculate'])->name('incentive.calculate');
 
 
     //Warp Masters

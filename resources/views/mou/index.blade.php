@@ -45,8 +45,7 @@
                             <tr>
                                 <th style="width: 100px">S.No</th>
                                 <th>Code</th>
-                                <th>ship-to party code</th>
-                                <th>RO</th>
+                                <th>Customer</th>
                                 <th>From</th>
                                 <th>To On</th>
                                
@@ -56,11 +55,10 @@
                             <tbody>
                                 @php $i = ($mous->currentpage()-1)* $mous->perpage() + 1; @endphp
                                 @forelse ($mous as $mou)
-                                    <tr>
+                                    <tr style="cursor: pointer;">
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $mou->mou_code }}</td>
-                                        <td>{{ $mou->ship_to_party_code }}</td>
-                                        <td>{{ $mou->region }}</td>
+                                        <td>{{ $mou->mouDetails->full_name }}</td>
                                         <td>{{ $mou->from_date }}</td>
                                         <td>{{$mou->to_date}}</td>
                                         
