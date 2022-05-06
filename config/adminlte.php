@@ -272,7 +272,7 @@ return [
         ],
         [
             'text'        => ['MOUs'],
-            'url'         => 'mous',
+            'url'         => 'moulist',
             // 'icon'        => 'fas fa-fw fa-user',
             'icon'       => 'people.png',
             'can'         => 'AdminAccess'
@@ -471,12 +471,14 @@ return [
             'text' => ['Profile'],
             'url'  => 'viewprofile',
             'icon'       => 'admin.png',
+            'can'         => 'CustomerAccess'
             // 'icon' => 'fas fa-fw fa-lock',
         ],
         [
             'text' => ['Mous'],
-            'url'  => 'mous',
+            'url'  => 'moulist',
             'icon'       => 'people.png',
+            'can'         => 'CustomerAccess'
             // 'icon' => 'fas fa-fw fa-lock',
         ],
         [

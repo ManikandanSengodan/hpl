@@ -37,7 +37,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         Gate::define('CustomerAccess', function ($user) {
-            if ($user->role_id == '1') {
+            if ($user->role_id == '2') {
                 return true;
             }
             return false;

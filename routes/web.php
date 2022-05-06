@@ -70,7 +70,7 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('designers/{designer}', [\App\Http\Controllers\Admin\DesignerController::class, 'destroy'])->name('designers.destroy');
 
     //MOU
-    Route::get('mous1', [\App\Http\Controllers\Admin\MouController::class, 'index'])->name('mous.index');
+    Route::get('/moulist', [\App\Http\Controllers\Admin\MouController::class, 'index'])->name('mous.index');
     Route::get('mous/create', [\App\Http\Controllers\Admin\MouController::class, 'create'])->name('mous.create');
     Route::post('mous/store', [\App\Http\Controllers\Admin\MouController::class, 'store'])->name('mous.store');
     Route::get('mous/{mou}/edit', [\App\Http\Controllers\Admin\MouController::class, 'edit'])->name('mous.edit');
@@ -85,7 +85,7 @@ Route::middleware(['auth'])->group(function () {
    //Incentive Masters
     Route::get('incentive/{mou_id}', [\App\Http\Controllers\Admin\MouController::class, 'incentive'])->name('incentive.view');
     Route::post('/calculate', [\App\Http\Controllers\Admin\MouController::class, 'calculate'])->name('incentive.calculate');
-
+    Route::get('details/{mou_id}', [\App\Http\Controllers\Admin\MouController::class, 'incentiveDetails'])->name('incentive.details');
 
     //Warp Masters
 

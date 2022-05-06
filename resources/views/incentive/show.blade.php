@@ -73,7 +73,7 @@
                             <thead>
                             <tr>
                                 <th>Month</th>
-                                <th>Customer Order</th>
+                                <th>Customer Ordered Quantity</th>
                                 <th>Unserviced ZDOP Quantity</th>
                                 <th>Invoice Domestic Lifting</th>
                                 <th>Invoice Deemed Export Lifting</th>
@@ -249,6 +249,14 @@
                                 <tr>
                                 @foreach ( json_decode($incentives->mar)  as $mar)
                                 <td>{{ $mar}}</td>  
+                                @endforeach
+                                <td></td>
+                                </tr>
+                                @endif
+                                @if($incentives->q4) 
+                                <tr>
+                                @foreach ( json_decode($incentives->q4)  as $q4)
+                                <td>{{ $q4}}</td>  
                                 @endforeach
                                 <td></td>
                                 </tr>

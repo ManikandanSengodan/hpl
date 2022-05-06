@@ -52,6 +52,7 @@
                                 <th>To On</th>
                                 <th>Download</th>
                                 <th>Upload</th>
+                                <th>Action</th>
                                
                                 <th style="width: 200px">Action</th>
                             </tr>
@@ -102,20 +103,12 @@
                                             
                                         </td>
                                         
+                                       
                                         <td>
                                             <a href="{{ route('mous.show',$mou->id) }}" class="btn btn-sm btn-warning">View</a>
-                                            @if(!$mou->deleted_at)
-                                            <a href="{{ route('mous.edit',$mou->id) }}" class="btn btn-sm btn-info">Edit</a>
-                                            <form method="POST" action="{{ route('mous.destroy', $mou->id) }}"
-                                                accept-charset="UTF-8"
-                                                style="display: inline-block;"
-                                                onsubmit="return confirm('Are you sure do you want to delete?');">
-                                                @csrf
-                                                @method('DELETE')
-                                                <input class="btn btn-sm btn-danger" type="submit" value="Delete">
-                                            </form>
-                                            @endif
+                                            <a href="{{ route('incentive.details',$mou->id) }}" class="btn btn-sm btn-success">View Incentive</a>
                                         </td>
+                                        <td></td>
                                     </tr>
                                  @empty
                                     <tr>

@@ -527,8 +527,6 @@ class MouController extends Controller
 
     }
     
-   
-    } 
 
     public function downloadPdf()
     {
@@ -538,7 +536,16 @@ class MouController extends Controller
             'date' => date('m/d/Y')
         ];
           
-        $pdf = PDF::loadView('mou.pdf', $data);
-        return $pdf->download('test.pdf');
+        // $pdf = PDF::loadView('mou.pdf', $data);
+        // return $pdf->download('test.pdf');
+    }
+
+
+    public function incentiveDetails($mou_id){
+
+        $incentives = Incentive::where('mou_id',$mou_id)->first();
+       
+        return view("incentive.details", compact("incentives"));
+
     }
 }
