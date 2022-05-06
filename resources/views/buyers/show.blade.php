@@ -39,6 +39,10 @@
                                         <td>{{ ucwords($buyer->full_name) }}</td>
                                     </tr>
                                     <tr>
+                                        <td><strong>{{ __('Code') }}</strong></td>
+                                        <td>{{ ucwords($buyer->customer_code) }}</td>
+                                    </tr>
+                                    <tr>
                                         <td><strong>{{ __('Primary Email') }}</strong></td>
                                         <td>{{ $buyer->email }}</td>
                                     </tr>

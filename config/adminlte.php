@@ -474,6 +474,12 @@ return [
             // 'icon' => 'fas fa-fw fa-lock',
         ],
         [
+            'text' => ['Mous'],
+            'url'  => 'mous',
+            'icon'       => 'people.png',
+            // 'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
             'text' => ['Change Password'],
             'url'  => 'change-password',
             'icon'       => 'padlock.png',
