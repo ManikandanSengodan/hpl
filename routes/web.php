@@ -80,6 +80,11 @@ Route::middleware(['auth'])->group(function () {
     Route::put('mous/upload/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'upload'])->name('mous.upload');
     Route::get('mous/pdf', [\App\Http\Controllers\Admin\MouController::class, 'downloadPdf'])->name('mous.downloadPdf');
 
+   
+   
+   //Incentive Masters
+    Route::get('incentive/{mou_id}', [\App\Http\Controllers\Admin\MouController::class, 'incentive'])->name('incentive.view');
+    Route::post('/calculate', [\App\Http\Controllers\Admin\MouController::class, 'calculate'])->name('incentive.calculate');
 
 
     //Warp Masters

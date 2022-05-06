@@ -101,7 +101,7 @@
                                     <label for="css_period">CSS Period</label>
                                     <select class="form-control @error('css_period') is-invalid @enderror" id="css_period" name="css_period">
                                     <option value="">Select CSS Period</option>
-                                    <option value="JUN-MAR" @if ($mou->css_period == "JUN-MAR") selected @endif>JUN-MAR </option>
+                                    <option value="JUL-MAR" @if ($mou->css_period == "JUL-MAR") selected @endif>JUL-MAR </option>
                                    
                                     </select>
                                     @error('css_period')

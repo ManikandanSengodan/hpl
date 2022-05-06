@@ -23,6 +23,7 @@
                             <h3 class="card-title">MOU Details</h3>
                             <div class="float-right">
                             @if(Auth()->User()->role_id != 2) 
+                                <a href="{{ route('incentive.view',$mou->id) }}" class="btn bg-gradient-success mr-2">{{ __('Caclculate Incentive') }}</a>
                                 <a href="{{ route('mous.edit',$mou->id) }}" class="btn bg-gradient-warning mr-2">{{ __('Edit') }}</a>
                                 <form method="POST" action="{{ route('mous.destroy', $mou->id) }}"
                                       accept-charset="UTF-8"

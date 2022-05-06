@@ -100,8 +100,7 @@
                                     <label for="css_period">CSS Period</label>
                                     <select class="form-control @error('css_period') is-invalid @enderror" id="css_period" name="css_period">
                                     <option value="">Select CSS Period</option>
-                                    <option value="71501s">71501s </option>
-                                    <option value="WBS">71601w </option>
+                                    <option value="JUL-MAR">JUL-MAR </option>
                                     </select>
                                     @error('css_period')
                                     <span class="error invalid-feedback">{{ $message }}</span>
