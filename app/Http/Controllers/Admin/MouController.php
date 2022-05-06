@@ -131,25 +131,7 @@ class MouController extends Controller
             ->route("mous.index")
             ->with("danger", "mous deleted successfully");
     }
-    public function upload(Request $request, Mou $mou)
-    {
-        // dd($mou);  
-        $request->validate([
-            'mou_upload' => 'required|mimes:pdf|max:2048',
-        ]);
-        $name = time().'.'.$request->file('mou_upload')->getClientOriginalName();
-        $path = $request->file('mou_upload')->move(public_path('mous'), $name);
-
-        $mou->update([
-            'id' => $mou,
-            'file_path' => $name,
-        ]); 
-
-        return redirect()
-        ->route("mous.index")
-        ->with("success", "File Uploaded successfully");
-    }
-   
+    
     public function incentive($mou_id)
     {
         $mou = Mou::with('mouDetails')->withTrashed()->findOrFail($mou_id);
@@ -526,20 +508,6 @@ class MouController extends Controller
         }
 
     }
-    
-
-    public function downloadPdf()
-    {
-        echo "Hello";exit;
-        $data = [
-            'title' => 'Welcome to tes.com',
-            'date' => date('m/d/Y')
-        ];
-          
-        // $pdf = PDF::loadView('mou.pdf', $data);
-        // return $pdf->download('test.pdf');
-    }
-
 
     public function incentiveDetails($mou_id){
 
