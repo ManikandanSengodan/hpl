@@ -43,6 +43,7 @@ class CustomerMaster extends Model
         // New Table
         "customer_name",
         "group_company",
+        "customer_code",
         "mobile_number",
         "pan",
         "password",
