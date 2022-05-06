@@ -475,7 +475,7 @@ return [
         ],
         [
             'text' => ['Mous'],
-            'url'  => 'mous',
+            'url'  => 'customer/mou',
             'icon'       => 'people.png',
             // 'icon' => 'fas fa-fw fa-lock',
         ],

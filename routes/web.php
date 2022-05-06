@@ -77,18 +77,19 @@ Route::middleware(['auth'])->group(function () {
     Route::put('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'update'])->name('mous.update');
     Route::get('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'show'])->name('mous.show');
     Route::delete('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'destroy'])->name('mous.destroy');
-    Route::put('mous/upload/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'upload'])->name('mous.upload');
-    Route::get('mous/pdf', [\App\Http\Controllers\Admin\MouController::class, 'downloadPdf'])->name('mous.downloadPdf');
+    
+    // Customer Mou
+    Route::get('customer/mou', [\App\Http\Controllers\Admin\MouCustomerController::class, 'index'])->name('customermou.index');
+    Route::get('customer/mou/{mou}', [\App\Http\Controllers\Admin\MouCustomerController::class, 'show'])->name('customermou.show');
+    Route::put('customer/mou/upload/{mou}', [\App\Http\Controllers\Admin\MouCustomerController::class, 'upload'])->name('customermou.upload');
+    Route::put('exportpdf/{mou}', [\App\Http\Controllers\Admin\MouCustomerController::class, 'downloadPdf'])->name('customermou.downloadPdf');
 
-   
-   
    //Incentive Masters
     Route::get('incentive/{mou_id}', [\App\Http\Controllers\Admin\MouController::class, 'incentive'])->name('incentive.view');
     Route::post('/calculate', [\App\Http\Controllers\Admin\MouController::class, 'calculate'])->name('incentive.calculate');
 
 
     //Warp Masters
-
     Route::get('warps', [\App\Http\Controllers\Admin\WarpController::class, 'index'])->name('warps.index');
     Route::get('warps/create', [\App\Http\Controllers\Admin\WarpController::class, 'create'])->name('warps.create');
     Route::post('warps', [\App\Http\Controllers\Admin\WarpController::class, 'store'])->name('warps.store');
@@ -97,9 +98,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('warps/{warp}', [\App\Http\Controllers\Admin\WarpController::class, 'show'])->name('warps.show');
     Route::delete('warps/{warp}', [\App\Http\Controllers\Admin\WarpController::class, 'destroy'])->name('warps.destroy');
  
-
     //wovenqualitys
-
     Route::get('wovenqualitys', [\App\Http\Controllers\Admin\wovenQualityController::class, 'index'])->name('wovenqualitys.index');
     Route::get('wovenqualitys/create', [\App\Http\Controllers\Admin\wovenQualityController::class, 'create'])->name('wovenqualitys.create');
     Route::post('wovenqualitys', [\App\Http\Controllers\Admin\wovenQualityController::class, 'store'])->name('wovenqualitys.store');

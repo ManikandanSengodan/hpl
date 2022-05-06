@@ -22,20 +22,8 @@
                         <div class="card-header">
                             <h3 class="card-title">MOU Details</h3>
                             <div class="float-right">
-                            @if(Auth()->User()->role_id != 2) 
-                                <a href="{{ route('incentive.view',$mou->id) }}" class="btn bg-gradient-success mr-2">{{ __('Caclculate Incentive') }}</a>
-                                <a href="{{ route('mous.edit',$mou->id) }}" class="btn bg-gradient-warning mr-2">{{ __('Edit') }}</a>
-                                <form method="POST" action="{{ route('mous.destroy', $mou->id) }}"
-                                      accept-charset="UTF-8"
-                                      style="display: inline-block;"
-                                      onsubmit="return confirm('Are you sure do you want to delete?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <input class="btn bg-gradient-danger mr-2" type="submit" value="Delete">
-                                </form>
-                                <a href="{{ route('mous.index') }}" class="btn bg-gradient-primary mr-2">{{ __('Back') }}</a>                           
-                            @else
-                            <form method="POST" enctype="multipart/form-data"  action="{{ route('mou.downloadPdf', $mou->id) }}"
+                          
+                            <form method="POST" enctype="multipart/form-data"  action="{{ route('customermou.downloadPdf', $mou->id) }}"
                                     accept-charset="UTF-8"
                                     style="display: inline-block;"
                                     >
@@ -43,7 +31,7 @@
                                     @csrf
                                 <input type="submit" class="btn bg-gradient-warning mr-2" value="{{ __('Export PDF') }}"">
                             </form>
-                            @endif
+                          
                             </div>
                         </div>
                         <!-- /.card-header -->
