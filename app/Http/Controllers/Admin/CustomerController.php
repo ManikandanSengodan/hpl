@@ -45,12 +45,12 @@ class CustomerController extends Controller
         $data['password']           = Hash::make($request->password);
         
         $user = User::create([
-            'name' => $request->customer_name,
-            'password' => Hash::make($request->password),
+            'name' => $request->full_name,
+            'password' => $request->password,
             'email' => $request->email,
             'phone' => $request->mobile_number,
             'status' => $request->status,
-            'role_id' => 0,
+            'role_id' => 2,
         ]);
         CustomerMaster::create($data);
 
@@ -107,5 +107,12 @@ class CustomerController extends Controller
         return redirect()
             ->route("customer.index")
             ->with("danger", "Customers deleted successfully");
+    }
+
+    public function viewprofile()
+    {
+        $email = Auth()->User()->email;
+        $buyer = CustomerMaster::where('email', $email)->first();
+        return view("buyers.show", compact("buyer"));
     }
 }

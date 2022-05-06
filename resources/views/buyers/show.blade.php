@@ -14,9 +14,10 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Customer Detail</h3>
+                            <h3 class="card-title">{{ ucwords($buyer->full_name) }} Detail</h3>
+                            @if(Auth()->User()->role_id != 2) 
                             <div class="float-right">
-                                <a href="{{ route('customer.edit',$buyer->id) }}" class="btn bg-gradient-warning btn-md mr-2">{{ __('Edit') }}</a>
+                              <a href="{{ route('customer.edit',$buyer->id) }}" class="btn bg-gradient-warning btn-md mr-2">{{ __('Edit') }}</a>
                                 <form method="POST" action="{{ route('customer.destroy', $buyer->id) }}"
                                       accept-charset="UTF-8"
                                       style="display: inline-block;"
@@ -27,26 +28,15 @@
                                 </form>
                                 <a href="{{ route('customer.index') }}" class="btn bg-gradient-primary btn-md mr-2">{{ __('Back') }}</a>
                             </div>
+                            @endif
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table class="table table-bordered table-sm">
                                 <tbody>
                                     <tr>
-                                        <td><strong>{{ __('Customer  Name') }}</strong></td>
-                                        <td>{{ ucwords($buyer->company_name) }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>{{ __('Mobile No') }}</strong></td>
-                                        <td>{{ $buyer->company_phone }}</td>
-                                    </tr>
-                                    <tr>
                                         <td><strong>{{ __('Name') }}</strong></td>
                                         <td>{{ ucwords($buyer->full_name) }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>{{ __('Category') }}</strong></td>
-                                        <td>{{ $buyer->categoryMasterDetail ? ucwords($buyer->categoryMasterDetail->category_name) : '-' }}</td>
                                     </tr>
                                     <tr>
                                         <td><strong>{{ __('Primary Email') }}</strong></td>
@@ -54,65 +44,63 @@
                                     </tr>
                                     <tr>
                                         <td><strong>{{ __('Mobile') }}</strong></td>
-                                        <td>{{ $buyer->mobile }}</td>
-                                    </tr>
-                                  <tr>
-                                        <td><strong>{{ __('Pan') }}</strong></td>
-                                        <td>{{ $buyer->pan }}</td>
-                                    </tr>
-                                 <tr>
-                                        <td><strong>{{ __('GST No') }}</strong></td>
-                                        <td>{{ $buyer->GST }}</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>{{ __('Secondary Email') }}</strong></td>
-                                        <td><?php $s_email= explode(",",$buyer->secondary_email);
-                                        foreach($s_email as $email){
-                                         echo $email."<br>";
-                                        } ?></td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>{{ __('Sales Rep') }}</strong></td>
-                                        <td>{{ $salesrep ? $salesrep->name : '-' }}</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td><strong>{{ __('Mobile No') }}</strong></td>
                                         <td>{{ $buyer->mobile_number }}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>{{ __('Bank Name') }}</strong></td>
-                                        <td>{{ $buyer->bank_name }}</td>
+                                        <td><strong>{{ __('Pan') }}</strong></td>
+                                        <td>{{ $buyer->pan }}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>{{ __('Account Number') }}</strong></td>
-                                        <td>{{ $buyer->account_no }}</td>
+                                        <td><strong>{{ __('GST No') }}</strong></td>
+                                        <td>    {{ $buyer->gst_no }}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>{{ __('IFSC Code') }}</strong></td>
-                                        <td>{{ $buyer->IFSCCode }}</td>
+                                        <td><strong>{{ __('Customer Address') }}</strong></td>
+                                        <td>{{ $buyer->customer_address }}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>{{ __('Opening Balance') }}</strong></td>
-                                        <td>{{ $buyer->opening_balance }}</td>
+                                        <td><strong>{{ __('Customer Region') }}</strong></td>
+                                        <td>
+                                            @if($buyer->customer_region == '1' ) East @endif
+                                            @if($buyer->customer_region == '2' ) West @endif
+                                            @if($buyer->customer_region == '3' ) North @endif
+                                            @if($buyer->customer_region == '4' ) South @endif
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><strong>{{ __('Credit Period') }}</strong></td>
-                                        <td>{{ $buyer->credit_period }}</td>
+                                        <td><strong>{{ __('Customer Group') }}</strong></td>
+                                        <td>
+                                            @if($buyer->customer_group == '1' ) Kolkata @endif
+                                            @if($buyer->customer_group == '2' ) East Kolkata @endif
+                                            @if($buyer->customer_group == '3' ) Chennai @endif
+                                            @if($buyer->customer_group == '4' ) Delhi NCR  @endif
+                                        </td>
                                     </tr>
                                     <tr>
-                                        <td><strong>{{ __('Grade') }}</strong></td>
-                                        <td>{{ $buyer->grade }}</td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td><strong>{{ __('Billing Address') }}</strong></td>
-                                        <td>{{ $buyer->billing_address }}</td>
+                                        <td><strong>{{ __('Sold to Party') }}</strong></td>
+                                        <td>{{ $buyer->sold_party }}</td>
                                     </tr>
                                     <tr>
-                                        <td><strong>{{ __('Shipping Address') }}</strong></td>
-                                        <td>{{ $buyer->shipping_address }}</td>
+                                        <td><strong>{{ __('Ship_ to Party') }}</strong></td>
+                                        <td>{{ $buyer->ship_party }}</td>
                                     </tr>
+                                    <tr>
+                                        <td><strong>{{ __('Bill to Prty') }}</strong></td>
+                                        <td>{{ $buyer->bill_party }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{ __('Sales Office') }}</strong></td>
+                                        <td>{{ $buyer->sales_office }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{ __('Payer Name') }}</strong></td>
+                                        <td>{{ $buyer->payer_name }}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>{{ __('Recon Account') }}</strong></td>
+                                        <td>{{ $buyer->recon_account }}</td>
+                                    </tr>
+                                 
                                 </tbody>
                             </table>
                         </div>

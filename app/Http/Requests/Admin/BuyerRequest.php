@@ -25,7 +25,7 @@ class BuyerRequest extends FormRequest
     public function rules()
     {
         $validation = [
-            // "full_name"                 => "required|min:4|max:50",
+            "full_name"                 => "required|min:4|max:50",
             "email"                     => ["required","email",Rule::unique('customer_masters')->ignore($this->buyer)],
             // "mobile_number"             => ["nullable","min:10","numeric", Rule::unique('customer_masters')->ignore($this->buyer)],
             // "sales_rep"                 =>'nullable',
@@ -44,7 +44,7 @@ class BuyerRequest extends FormRequest
             // "secondary_email"           => "nullable",
             "status"                    => "nullable",
             // "customer_code"             => "required",
-            "customer_name"             => "required",
+            // "customer_name"             => "required",
             "group_company"             => "required",
             // "customer_code"             => "required",
             "mobile_number"             => ["required","min:10","numeric", Rule::unique('customer_masters')->ignore($this->buyer)],

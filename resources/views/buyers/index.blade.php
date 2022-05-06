@@ -43,7 +43,7 @@
                                             {{-- <td>{{ $buyer->categoryMasterDetail ? ucwords($buyer->categoryMasterDetail->category_name) : '-'}}</td> --}}
                                             {{-- <td>{{ $buyer->salesRep ? $buyer->salesRep->name : '-' }}</td> --}}
                                             {{-- <td>{{ $buyer->opening_balance }}</td> --}}
-                                            <td>{{ $buyer->customer_name }}</td>
+                                            <td>{{ $buyer->full_name }}</td>
                                             <td>{{ $buyer->mobile_number }}</td>
                                             <td>
                                                 <a href="{{ route('customer.show',$buyer->id) }}" class="btn btn-sm btn-warning">View</a>

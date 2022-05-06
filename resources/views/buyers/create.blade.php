@@ -44,7 +44,7 @@
                                         <div class="row">
                                             <div class="form-group col-4">
                                                 <label for="customer_name">Customer Name <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control @error('customer_name') is-invalid @enderror" id="customer_name" name="customer_name" value="{{ $editCustomer ? old('customer_name',$editCustomer->customer_name) : old('customer_name') }}" placeholder="Customer Name">
+                                                <input type="text" class="form-control @error('customer_name') is-invalid @enderror" id="full_name" name="full_name" value="{{ $editCustomer ? old('full_name',$editCustomer->full_name) : old('full_name') }}" placeholder="Customer Name">
                                                 @error('customer_name')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
@@ -98,7 +98,7 @@
                                             </div>
                                             <div class="form-group col-4">
                                                 <label for="gst_no">GSTIN <span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control @error('gst_no') is-invalid @enderror" id="gst_no" name="GST" value="{{ $editCustomer ? old('gst_no',$editCustomer->gst_no) : old('gst_no') }}" placeholder="GSTIN">
+                                                <input type="text" class="form-control @error('gst_no') is-invalid @enderror" id="gst_no" name="gst_no" value="{{ $editCustomer ? old('gst_no',$editCustomer->gst_no) : old('gst_no') }}" placeholder="GSTIN">
                                                 @error('gst_no')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
