@@ -42,10 +42,10 @@ class CustomerController extends Controller
         // }
 
         $data                       = $request->validated();
-        $latestOrder = CustomerMaster::orderBy('created_at','DESC')->first();
-        $customer_code = '#HPL'.str_pad($latestOrder->id + 1, 6, "0", STR_PAD_LEFT);
+       // $latestOrder = CustomerMaster::orderBy('created_at','DESC')->first();
+       // $customer_code = '#HPL'.str_pad($latestOrder->id + 1, 6, "0", STR_PAD_LEFT);
         $data['password']           = Hash::make($request->password);
-        $data['customer_code']           = $customer_code;
+        $data['customer_code']           = "123123";
         
         $user = User::create([
             'name' => $request->full_name,
