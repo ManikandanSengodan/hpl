@@ -28,6 +28,7 @@
                                     <th style="width: 50px">S.No</th>
                                     <th>Customer Code</th>
                                     <th>Customer Name</th>
+                                    <th>Email</th>
                                     <th>Mobile Number</th>
                                     <th style="width: 200px">Action</th>
                                 </tr>
@@ -44,6 +45,7 @@
                                             {{-- <td>{{ $buyer->salesRep ? $buyer->salesRep->name : '-' }}</td> --}}
                                             {{-- <td>{{ $buyer->opening_balance }}</td> --}}
                                             <td>{{ $buyer->full_name }}</td>
+                                            <td>{{ $buyer->email }}</td>
                                             <td>{{ $buyer->mobile_number }}</td>
                                             <td>
                                                 <a href="{{ route('customer.show',$buyer->id) }}" class="btn btn-sm btn-warning">View</a>

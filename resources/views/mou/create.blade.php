@@ -59,7 +59,7 @@
                                     <label for="customer_id">Customer</label>
                                     <select class="form-control @error('customer_id') is-invalid @enderror" id="customer_id" name="customer_id">
                                     @foreach($customers as $customer)
-                                    <option value="{{$customer->id}}">{{$customer->company_name}}</option>
+                                    <option value="{{$customer->id}}">{{$customer->full_name}}</option>
                                    @endforeach
                                     </select>
                                 

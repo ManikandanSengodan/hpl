@@ -56,7 +56,7 @@ class CustomerController extends Controller
 
         return redirect()
             ->route("customer.index")
-            ->with("success", "Buyer created successfully.");
+            ->with("success", "Customer created successfully.");
     }
 
     public function edit(CustomerMaster $buyer)

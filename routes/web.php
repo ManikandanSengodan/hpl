@@ -70,13 +70,15 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('designers/{designer}', [\App\Http\Controllers\Admin\DesignerController::class, 'destroy'])->name('designers.destroy');
 
     //MOU
-    Route::get('mous', [\App\Http\Controllers\Admin\MouController::class, 'index'])->name('mous.index');
+    Route::get('mous1', [\App\Http\Controllers\Admin\MouController::class, 'index'])->name('mous.index');
     Route::get('mous/create', [\App\Http\Controllers\Admin\MouController::class, 'create'])->name('mous.create');
-    Route::post('mous', [\App\Http\Controllers\Admin\MouController::class, 'store'])->name('mous.store');
+    Route::post('mous/store', [\App\Http\Controllers\Admin\MouController::class, 'store'])->name('mous.store');
     Route::get('mous/{mou}/edit', [\App\Http\Controllers\Admin\MouController::class, 'edit'])->name('mous.edit');
     Route::put('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'update'])->name('mous.update');
     Route::get('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'show'])->name('mous.show');
     Route::delete('mous/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'destroy'])->name('mous.destroy');
+    Route::put('mous/upload/{mou}', [\App\Http\Controllers\Admin\MouController::class, 'upload'])->name('mous.upload');
+    Route::get('mous/pdf', [\App\Http\Controllers\Admin\MouController::class, 'downloadPdf'])->name('mous.downloadPdf');
 
 
 

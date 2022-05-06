@@ -22,6 +22,7 @@
                         <div class="card-header">
                             <h3 class="card-title">MOU Details</h3>
                             <div class="float-right">
+                            @if(Auth()->User()->role_id != 2) 
                                 <a href="{{ route('mous.edit',$mou->id) }}" class="btn bg-gradient-warning mr-2">{{ __('Edit') }}</a>
                                 <form method="POST" action="{{ route('mous.destroy', $mou->id) }}"
                                       accept-charset="UTF-8"
@@ -31,7 +32,10 @@
                                     @method('DELETE')
                                     <input class="btn bg-gradient-danger mr-2" type="submit" value="Delete">
                                 </form>
-                                <a href="{{ route('mous.index') }}" class="btn bg-gradient-primary mr-2">{{ __('Back') }}</a>
+                                <a href="{{ route('mous.index') }}" class="btn bg-gradient-primary mr-2">{{ __('Back') }}</a>                           
+                            @else
+                            <a href="{{ route('mous.edit',$mou->id) }}" class="btn bg-gradient-warning mr-2">{{ __('Download') }}</a>
+                            @endif
                             </div>
                         </div>
                         <!-- /.card-header -->

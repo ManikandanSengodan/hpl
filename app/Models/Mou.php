@@ -29,6 +29,7 @@ class Mou extends Model
         "annual_rate",
         "address",
         "region",
+        "file_path",
         "status",
         "from_date",
         "to_date"

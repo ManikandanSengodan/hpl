@@ -58,7 +58,7 @@
                                             </div>
                                             <div class="form-group col-4">
                                                 <label for="customer_code">Customer Code<span class="text-danger">*</span></label>
-                                                <input type="text" class="form-control @error('customer_code') is-invalid @enderror" id="customer_code" name="customer_code" value="{{ $editCustomer ? old('customer_code',$editCustomer->company_phone) : old('customer_code') }}" placeholder="Customer Code" readonly>
+                                                <input type="text" class="form-control @error('customer_code') is-invalid @enderror" id="customer_code" name="customer_code" value="{{ $editCustomer ? old('customer_code',$editCustomer->customer_code) : old('customer_code') }}" placeholder="Customer Code" readonly>
                                                 @error('customer_code')
                                                 <span class="error invalid-feedback">{{ $message }}</span>
                                                 @enderror
