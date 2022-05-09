@@ -16,21 +16,7 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                 <!--<div class="col-lg-3 col-6">
-                    small box 
-                    <a href="{{ route('sellers.index') }}">
-                    <div class="small-box bg-gradient-info">
-                        <div class="inner">
-                            <h3>{{ $vendor_count ?? 0 }}</h3>
-
-                            <p>{{ __('Vendors') }}</p>
-                        </div>
-                        <div class="icon">
-                            <i class="fas fa-user-tie"></i>
-                        </div>
-                    </div>
-                    </a>
-                </div>-->
+                 
                 <div class="col-lg-3 col-6">
                     <!-- small box -->
                     <a href="{{ route('customer.index') }}">

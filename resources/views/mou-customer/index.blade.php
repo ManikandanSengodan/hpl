@@ -52,8 +52,8 @@
                                 <th>To On</th>
                                 <th>Download</th>
                                 <th>Upload</th>
-                               
-                                <th style="width: 200px">Action</th>
+                                <th>Action</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
@@ -113,8 +113,9 @@
                                         
                                         <td>
                                             <a href="{{ route('customermou.show',$mou->id) }}" class="btn btn-sm btn-warning">View</a>
-                                          
+                                            <a href="{{ route('incentive.details',$mou->id) }}" class="btn btn-sm btn-success">View Incentive</a>
                                         </td>
+                                        <td></td>
                                     </tr>
                                  @empty
                                     <tr>

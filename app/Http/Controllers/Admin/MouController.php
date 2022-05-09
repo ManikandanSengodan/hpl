@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests\Admin\MouRequest;
 use App\Http\Requests\Auth\ChangePasswordRequest;
-use App\Models\Staf_master;
 use App\Models\Role_master;
-use App\Models\Staf_address;
 use App\Models\Mou;
 use Barryvdh\DomPDF\Facade\Pdf;
 

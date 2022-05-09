@@ -476,7 +476,7 @@ return [
         ],
         [
             'text' => ['Mous'],
-            'url'  => 'moulist',
+            'url'  => 'customer/mou',
             'icon'       => 'people.png',
             'can'         => 'CustomerAccess'
             // 'icon' => 'fas fa-fw fa-lock',

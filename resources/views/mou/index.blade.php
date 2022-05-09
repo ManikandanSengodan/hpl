@@ -50,8 +50,6 @@
                                 <th>Customer</th>
                                 <th>From</th>
                                 <th>To On</th>
-                                <th>Download</th>
-                                <th>Upload</th>
                                 <th>Action</th>
                                
                                 <th style="width: 200px">Action</th>
@@ -66,9 +64,6 @@
                                         <td>{{ $mou->mouDetails->full_name }}</td>
                                         <td>{{ $mou->from_date }}</td>
                                         <td>{{$mou->to_date}}</td>
-                                        
-                                        
-                                       
                                         <td>
                                             <a href="{{ route('mous.show',$mou->id) }}" class="btn btn-sm btn-warning">View</a>
                                             <a href="{{ route('incentive.details',$mou->id) }}" class="btn btn-sm btn-success">View Incentive</a>
